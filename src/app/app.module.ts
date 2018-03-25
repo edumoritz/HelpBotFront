@@ -5,7 +5,11 @@ import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { appRoutes } from './app.routes';
+import { APP_ROUTES } from './app.routes';
+import { LoginModule } from './_login/login.module';
+import { CoreModule } from './core/core.module';
+
+import { AuthInterceptor } from './interceptor/auth-interceptor';
 
 
 @NgModule({
@@ -15,10 +19,8 @@ import { appRoutes } from './app.routes';
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false}
-    )
+    LoginModule.foorRoot(),
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
