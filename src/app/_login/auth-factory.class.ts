@@ -5,10 +5,10 @@ export class AuthFactory {
 
   private userName = '';
   private password = '';
-  private clientId = 'HelpClientId';
+  private clientId = 'help-bot-client-id';
   private grantType = 'password';
   private scope = 'read_write';
-  private clientSecret = 'HelpClientSecret';
+  private clientSecret = '84fd657fg2f4g5r8ty2cd6xs5e74';
 
   public setUsername(username: string): AuthFactory {
     this.userName = username;
