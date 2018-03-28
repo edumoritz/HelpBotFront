@@ -1,4 +1,4 @@
-import { Campo } from "./campo.model";
+import { Campo } from './campo.model';
 
 export class FuncionalidadeCampo {
     constructor(

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
 
 @Component({
- selector: 'help-login',
+ selector: 'help-bot-login',
  templateUrl: './login.component.html',
  styleUrls: ['./login.component.scss']
 })
@@ -40,6 +40,7 @@ export class LoginComponent {
     window.localStorage.removeItem('HelpBotPassword');
     this.loginService.login(this.username, this.password).subscribe((resposta) => {
       if (resposta) {
+        console.log('Logado');
         window.localStorage.setItem('HelpBotUser', CriptService.encode(this.username));
         window.localStorage.setItem('HelpBotPassword', CriptService.encode(this.password));
       } else {

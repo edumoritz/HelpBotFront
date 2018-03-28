@@ -1,4 +1,4 @@
-import { RegraCampo } from "./regracampo.model";
+import { RegraCampo } from './regra-campo.model';
 
 export class CampoRegraCampo {
     constructor(

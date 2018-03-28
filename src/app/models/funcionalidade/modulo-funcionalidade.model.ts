@@ -1,4 +1,4 @@
-import { Funcionalidade } from "./funciondalidade.model";
+import { Funcionalidade } from './funciondalidade.model';
 
 export class ModuloFuncionalidade {
     constructor(
