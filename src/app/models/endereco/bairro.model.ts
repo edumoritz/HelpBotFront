@@ -1,7 +1,9 @@
+import { Cidade } from "./cidade.model";
+
 export class Bairro {
     constructor(
         public id?: number,
         public bairro?: string,
-        public cidade?: string
+        public cidade?: Cidade
     ) { }
 }
