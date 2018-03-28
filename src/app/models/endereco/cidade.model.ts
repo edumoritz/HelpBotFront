@@ -1,4 +1,5 @@
-import { Estado } from "./estado.models";
+import { Estado } from "./estado.model";
+
 
 export class Cidade {
     constructor(
