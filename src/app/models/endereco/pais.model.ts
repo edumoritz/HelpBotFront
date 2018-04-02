@@ -1,6 +1,6 @@
 export class Pais {
-    constructor(
-      public id?: number,
-      public pais?: string
-    ) { }
-  }
+  constructor(
+    public id?: number,
+    public pais?: string
+  ) { }
+}

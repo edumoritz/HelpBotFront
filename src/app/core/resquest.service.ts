@@ -1,14 +1,15 @@
+import { Pageable } from './../models/paginacao/pageable.model';
+import { Paginacao } from './../models/paginacao/paginacao.model';
 import { PessoaJuridica } from './../models/pessoa/pessoaJuridica.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
-export abstract class AbstractResquestService<T> {
+export class ResquestService<T> {
 
   constructor(
-    public http: HttpClient
+    public http: HttpClient,
+    public api: string
   ) { }
-
-  public abstract get api(): string;
 
   public post(objeto: T): Observable<T> {
     return this.http.post<T>(this.api, objeto);
@@ -19,11 +20,11 @@ export abstract class AbstractResquestService<T> {
   }
 
   // TODO criar Paginação
-  public getAll(paginacao: any): Observable<T[]> {
+  public getAll(paginacao: Paginacao): Observable<Pageable<T>> {
 
     // getOptions(paginacao);
 
-    return this.http.get<T[]>(this.api);
+    return this.http.get<Pageable<T>>(this.api);
   }
 
   public getOne(id: number): Observable<T> {

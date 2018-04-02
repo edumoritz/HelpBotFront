@@ -1,6 +1,6 @@
 export class RegraCampo {
-    constructor(
-        public id?: number,
-        public nome?: string
-    ) { }
+  constructor(
+    public id?: number,
+    public nome?: string
+  ) { }
 }

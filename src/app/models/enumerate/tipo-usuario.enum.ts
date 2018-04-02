@@ -1,6 +1,6 @@
-import { EnumType } from "./enum-type.enum";
+import { EnumType } from './enum-type.enum';
 
 export const EnumTipoCampo: EnumType = [
-    { descricao: "Empresa", id: "EMPRESA" },
-    { descricao: "Cliente", id: "CLIENTE"}
-]
+  { descricao: 'Empresa', id: 'EMPRESA' },
+  { descricao: 'Cliente', id: 'CLIENTE' }
+];

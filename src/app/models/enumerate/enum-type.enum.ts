@@ -1,1 +1,1 @@
-export type EnumType = { descricao: string, id: string }[]
+export type EnumType = { descricao: string, id: string }[];

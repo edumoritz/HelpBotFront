@@ -11,7 +11,8 @@ import { HttpEvent } from '@angular/common/http';
 import { HttpRequest } from '@angular/common/http';
 import { HttpHandler } from '@angular/common/http';
 
-import { Injector, Injectable } from '@angular/core';
+import { Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/do';
 import { TokenService } from '../core/token.service';
