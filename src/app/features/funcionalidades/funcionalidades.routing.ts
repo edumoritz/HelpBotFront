@@ -6,5 +6,5 @@ import { FuncionalidadesCadastroComponent } from './cadastro/funcionalidades-cad
 
 export const funcionalidadesRoute: Routes = [
   { path: 'funcionalidades-visualizacao', component: FuncionalidadesVisualizacaoComponent},
-  { path: 'funcionalidades-cadastro', component: FuncionalidadesCadastroComponent},
+  { path: 'funcionalidades-cadastro', component: FuncionalidadesCadastroComponent}
 ];

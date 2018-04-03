@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FuncionalidadesVisualizacaoComponent } from './visualizacao/funcionalidades-visualizacao.component';
+import { FuncionalidadesCadastroComponent } from './cadastro/funcionalidades-cadastro.component';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import { FuncionalidadesVisualizacaoComponent } from './visualizacao/funcionalid
     FormsModule
   ],
   declarations: [
-    FuncionalidadesVisualizacaoComponent
+    FuncionalidadesVisualizacaoComponent,
+    FuncionalidadesCadastroComponent
   ]
 })
 export class FuncionalidadesModule { }
