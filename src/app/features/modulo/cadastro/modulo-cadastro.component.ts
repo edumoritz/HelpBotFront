@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AModuleService } from '../../../services-abstract/module.service';
+import { AModuleService } from '../../../services-abstract/modulo.service';
 
 @Component({
   selector: 'help-bot-modulo-cadastro',
