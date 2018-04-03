@@ -8,11 +8,11 @@ import { ResquestService } from '../core/resquest.service';
 import { Pageable } from '../models/paginacao/pageable.model';
 import { Paginacao } from '../models/paginacao/paginacao.model';
 
-import { AModuleService } from '../services-abstract/module.service';
 import { RegraCampo } from '../models/funcionalidade/regra-campo.model';
+import { ARegraCampoService } from '../services-abstract/regra-campo.service';
 
 @Injectable()
-export class RegraCampoService extends AModuleService {
+export class RegraCampoService extends ARegraCampoService {
 
   private readonly apiUrl = 'api/regraCampo';
 

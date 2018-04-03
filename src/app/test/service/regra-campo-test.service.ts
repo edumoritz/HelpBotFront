@@ -2,10 +2,10 @@ import { Observable } from 'rxjs/Rx';
 
 import { Pageable } from '../../models/paginacao/pageable.model';
 import { Paginacao } from '../../models/paginacao/paginacao.model';
-import { AModuleService } from '../../services-abstract/module.service';
 import { RegraCampo } from '../../models/funcionalidade/regra-campo.model';
+import { ARegraCampoService } from '../../services-abstract/regra-campo.service';
 
-export class RegraCampoTestService implements AModuleService {
+export class RegraCampoTestService implements ARegraCampoService {
 
   private readonly listaCampo = new Map<number, RegraCampo>();
   private idPadrao = 1;

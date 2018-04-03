@@ -2,10 +2,10 @@ import { Observable } from 'rxjs/Rx';
 
 import { Pageable } from '../../models/paginacao/pageable.model';
 import { Paginacao } from '../../models/paginacao/paginacao.model';
-import { AModuleService } from '../../services-abstract/module.service';
 import { Funcionalidade } from '../../models/funcionalidade/funciondalidade.model';
+import { AFuncionalidadeService } from '../../services-abstract/funcionalidade.service';
 
-export class FuncionalidadeTestService implements AModuleService {
+export class FuncionalidadeTestService implements AFuncionalidadeService {
 
     private readonly listaFuncionalidades = new Map<number, Funcionalidade>();
     private idPadrao = 1;

@@ -1,4 +1,3 @@
-import { AModuleService } from "../services-abstract/module.service";
 import { Injectable } from "@angular/core";
 import { ResquestService } from "../core/resquest.service";
 import { Modulo } from "../models/funcionalidade/modulo.model";
@@ -7,9 +6,10 @@ import { Observable } from 'rxjs/Rx';
 import { Paginacao } from "../models/paginacao/paginacao.model";
 import { Pageable } from "../models/paginacao/pageable.model";
 import { Funcionalidade } from "../models/funcionalidade/funciondalidade.model";
+import { AFuncionalidadeService } from "../services-abstract/funcionalidade.service";
 
 @Injectable()
-export class FuncionalidadeService extends AModuleService {
+export class FuncionalidadeService extends AFuncionalidadeService {
 
     private readonly apiUrl = 'api/funcionalidade';
 

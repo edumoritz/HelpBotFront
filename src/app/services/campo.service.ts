@@ -8,11 +8,11 @@ import { ResquestService } from '../core/resquest.service';
 import { Pageable } from '../models/paginacao/pageable.model';
 import { Paginacao } from '../models/paginacao/paginacao.model';
 
-import { AModuleService } from '../services-abstract/module.service';
 import { Campo } from '../models/funcionalidade/campo.model';
+import { ACampoService } from '../services-abstract/campo.service';
 
 @Injectable()
-export class CampoService extends AModuleService {
+export class CampoService extends ACampoService {
 
   private readonly apiUrl = 'api/campo';
 

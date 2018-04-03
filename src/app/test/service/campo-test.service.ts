@@ -2,10 +2,10 @@ import { Observable } from 'rxjs/Rx';
 
 import { Pageable } from '../../models/paginacao/pageable.model';
 import { Paginacao } from '../../models/paginacao/paginacao.model';
-import { AModuleService } from '../../services-abstract/module.service';
 import { Campo } from '../../models/funcionalidade/campo.model';
+import { ACampoService } from '../../services-abstract/campo.service';
 
-export class ModuleTestService implements AModuleService {
+export class CampoTestService implements ACampoService {
 
   private readonly listaCampos = new Map<number, Campo>();
   private idPadrao = 1;
