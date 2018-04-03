@@ -7,6 +7,5 @@ export const EnumTipoCampo: EnumType = [
   { descricao: 'Data hora', id: 'DATA_HORA' },
   { descricao: 'Hora', id: 'HORA' },
   { descricao: 'Lógico', id: 'LOGICO' },
-  { descricao: 'Valor', id: 'VALORADO' },
-
+  { descricao: 'Valor', id: 'VALORADO' }
 ];
