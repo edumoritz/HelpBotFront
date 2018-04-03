@@ -8,8 +8,8 @@ import { ResquestService } from '../core/resquest.service';
 import { Pageable } from '../models/paginacao/pageable.model';
 import { Paginacao } from '../models/paginacao/paginacao.model';
 import { Modulo } from '../models/funcionalidade/modulo.model';
+import { AModuleService } from '../services-abstract/modulo.service';
 
-import { AModuleService } from '../services-abstract/module.service';
 
 @Injectable()
 export class ModuleService extends AModuleService {

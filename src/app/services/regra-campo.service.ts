@@ -14,7 +14,7 @@ import { ARegraCampoService } from '../services-abstract/regra-campo.service';
 @Injectable()
 export class RegraCampoService extends ARegraCampoService {
 
-  private readonly apiUrl = 'api/regraCampo';
+  private readonly apiUrl = 'api/regra-campo';
 
   private readonly requestService: ResquestService<RegraCampo>;
 
