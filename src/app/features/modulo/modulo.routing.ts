@@ -3,5 +3,6 @@ import { Routes } from '@angular/router';
 import { ModuleComponent } from './main/module.component';
 
 export const moduleRoute: Routes = [
-  { path: 'modulo', component: ModuleComponent }
+  { path: 'modulo-visualizacao', component: ModuleComponent },
+  { path: 'modulo-cadastro', component: ModuleComponent },
 ];
