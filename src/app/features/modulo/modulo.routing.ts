@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-
-import { ModuleComponent } from './main/module.component';
+import { ModuloVisualizacaoComponent } from './visualizacao/modulo-visualizacao.component';
+import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
 
 export const moduleRoute: Routes = [
-  { path: 'modulo-visualizacao', component: ModuleComponent },
-  { path: 'modulo-cadastro', component: ModuleComponent },
+  { path: 'modulo-visualizacao', component: ModuloVisualizacaoComponent },
+  { path: 'modulo-cadastro', component: ModuloCadastroComponent }
 ];
