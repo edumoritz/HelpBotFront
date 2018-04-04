@@ -4,5 +4,5 @@ import { CampoVisualizacaoComponent } from './visualizacao/campo-visualizacao.co
 
 export const campoRoute: Routes = [
   { path: 'campo-visualizacao', component: CampoVisualizacaoComponent },
-  { path: 'campo-cadastro', component: CampoCadastroComponent }
+  { path: 'campo-cadastro/{id}', component: CampoCadastroComponent }
 ];
