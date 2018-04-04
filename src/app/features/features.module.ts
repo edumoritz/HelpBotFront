@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
+import { CampoModule } from './campo/campo.module';
 
 @NgModule({
-  imports: [],
+  imports: [
+    CampoModule
+  ],
   exports: [],
   declarations: [],
   providers: [],

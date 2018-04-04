@@ -17,6 +17,7 @@ import { CoreModule } from './core/core.module';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
 
 import { providersServices } from './services-providers/service-provider.factory';
+import { FeaturesModule } from './features/features.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { providersServices } from './services-providers/service-provider.factory
     HttpClientModule,
     LoginModule.foorRoot(),
     RouterModule.forRoot(APP_ROUTES),
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
+    FeaturesModule
   ],
   providers: [
     {

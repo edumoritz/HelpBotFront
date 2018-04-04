@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Rx';
 import { Pageable } from '../../models/paginacao/pageable.model';
 import { Paginacao } from '../../models/paginacao/paginacao.model';
 import { Modulo } from '../../models/funcionalidade/modulo.model';
-import { AModuleService } from '../../services-abstract/module.service';
+import { AModuleService } from '../../services-abstract/modulo.service';
 
 export class ModuleTestService implements AModuleService {
 
