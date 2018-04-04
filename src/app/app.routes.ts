@@ -2,6 +2,7 @@ import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './_login/login.component';
 import { campoRoute } from './features/campo/campo.routing';
+import { moduloRoute } from './features/modulo/modulo.routing';
 
 export const APP_ROUTES: Routes = [
   {
@@ -11,9 +12,9 @@ export const APP_ROUTES: Routes = [
   {
     path: 'app',
     children: [
-      ...campoRoute
+      ...campoRoute,
+      ...moduloRoute
     ]
   },
-  ...campoRoute,
-  { path: "**", redirectTo: "/login" }
+  { path: '**', redirectTo: '/login' }
 ];

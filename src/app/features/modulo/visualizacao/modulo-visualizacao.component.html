@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <h3>
+    <button
+      type="button"
+      class="btn btn-xs btn-success"
+      (click)="criar()"
+      >
+      +
+    </button>
+    Modulos
+  </h3>
+
+  <br>
+
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let modulo of modulos">
+        <td>
+          <button
+            type="button"
+            class="btn btn-xs btn-primary"
+            (click)="editar(modulo)"
+            >
+            Editar
+          </button>
+        </td>
+        <td>{{ modulo.nome }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

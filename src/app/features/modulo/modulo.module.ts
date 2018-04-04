@@ -14,4 +14,4 @@ import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
     ModuloCadastroComponent
   ]
 })
-export class ModuleModule { }
+export class ModuloModule { }
