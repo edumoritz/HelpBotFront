@@ -5,5 +5,5 @@ import { RegraCampoVisualizacaoComponent } from './visualizacao/regra-campo-visu
 
 export const RegraCampoRoute: Routes = [
   { path: 'regra-campo-visualizacao', component: RegraCampoVisualizacaoComponent },
-  { path: 'regra-campo-cadastro/{id}', component: RegraCampoCadastroComponent }
+  { path: 'regra-campo-cadastro/:id', component: RegraCampoCadastroComponent }
 ];
