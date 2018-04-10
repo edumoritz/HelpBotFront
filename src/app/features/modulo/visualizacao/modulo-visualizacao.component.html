@@ -1,16 +1,12 @@
-<div class="container-fluid">
-  <h3>
-    <button
-      type="button"
-      class="btn btn-xs btn-success"
-      (click)="criar()"
-      >
-      +
-    </button>
-    Modulos
-  </h3>
+<help-bot-page titulo="Modulos">
 
-  <br>
+  <button
+    type="button"
+    class="btn btn-xs btn-success"
+    (click)="criar()"
+    >
+    +
+  </button>
 
   <table class="table table-striped">
 
@@ -28,13 +24,21 @@
             type="button"
             class="btn btn-xs btn-primary"
             (click)="editar(modulo)"
+            title="Editar"
             >
-            Editar
+            <fa name="pencil-alt"></fa>
+            <!-- <i class="fas fa-pencil-alt"></i> -->
           </button>
         </td>
-        <td>{{ modulo.nome }}</td>
+        <td>
+          <label [title]="modulo.especificacao">
+            {{ modulo.nome }}
+          </label>
+        </td>
       </tr>
     </tbody>
 
   </table>
-</div>
+
+</help-bot-page>
+
