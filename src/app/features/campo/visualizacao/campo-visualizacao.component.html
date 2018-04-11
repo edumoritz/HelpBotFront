@@ -1,4 +1,4 @@
-<help-bot-page titulo="Modulos">
+<help-bot-page titulo="Campos">
   <fa-icon
   [icon]="fontAwesomePlusCircle"
   class="my-success-color my-icon-font"
@@ -19,13 +19,23 @@
       <tr *ngFor="let campo of campos">
         <td>
           <fa-icon
-              [icon]="fontAwesomePencil"
-              class="my-primary-color my-icon-font"
-              (click)="editar(modulo)"
+              [icon]="fontAwesomeTimeCircle"
+              class="my-danger-color my-icon-font"
+              (click)="remover(campo)"
               size="lg"
-              title="Editar esse Campo"
+              title="Remover esse Campo"              
               >
             </fa-icon>
+            <div class="btn-group">
+                <fa-icon
+                [icon]="fontAwesomePencil"
+                class="my-primary-color my-icon-font"
+                (click)="editar(campo)"
+                size="lg"
+                title="Editar esse Campo"
+                >
+              </fa-icon>
+            </div>
         </td>
         <td>
           <label [title]="campo.especificacao">

@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { CampoCadastroComponent } from './cadastro/campo-cadastro.component';
 import { CampoVisualizacaoComponent } from './visualizacao/campo-visualizacao.component';
 import { PageModule } from '../../components/page/page.module';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     PageModule,
-    AngularFontAwesomeModule
+    FontAwesomeModule
     
   ],
   declarations: [

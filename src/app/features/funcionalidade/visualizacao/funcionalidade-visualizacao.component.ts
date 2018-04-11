@@ -32,6 +32,10 @@ export class FuncionalidadeVisualizacaoComponent {
    public criar(): void {
     this.router.navigate([`/app/funcionalidade-cadastro/null`]);
   }
+
+  public remover(func: Funcionalidade): void {
+    this.funcionalidadeService.delete(func.id).subscribe(() => this.buscarTodos());
+  }
   
   public buscarTodos(): void {
     const paginacao = new Paginacao();
