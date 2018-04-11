@@ -1,12 +1,12 @@
 <help-bot-page titulo="Modulos">
-
-  <button
-    type="button"
-    class="btn btn-xs btn-success"
-    (click)="criar()"
-    >
-    +
-  </button>
+  <fa-icon
+  [icon]="fontAwesomePlusCircle"
+  class="my-success-color my-icon-font"
+  (click)="criar()"
+  size="lg"
+  title="Adicionar um novo Campo"
+  >
+</fa-icon>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -18,15 +18,14 @@
     <tbody>
       <tr *ngFor="let campo of campos">
         <td>
-          <button
-            type="button"
-            class="btn btn-xs btn-primary"
-            (click)="editar(campo)"
-            title="Editar"
-            >
-            <fa name="pencil-alt"></fa>
-            <!-- <i class="fas fa-pencil-alt"></i> -->
-          </button>
+          <fa-icon
+              [icon]="fontAwesomePencil"
+              class="my-primary-color my-icon-font"
+              (click)="editar(modulo)"
+              size="lg"
+              title="Editar esse Campo"
+              >
+            </fa-icon>
         </td>
         <td>
           <label [title]="campo.especificacao">
