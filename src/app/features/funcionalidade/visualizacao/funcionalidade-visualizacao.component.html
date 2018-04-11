@@ -1,6 +1,7 @@
 <help-bot-page titulo="Funcionalidades">
 
   <fa-icon
+<<<<<<< HEAD
   [icon]="fontAwesomePlusCircle"
   class="my-success-color my-icon-font"
   (click)="criar()"
@@ -8,6 +9,15 @@
   title="Adicionar uma nova Funcionalidade"
   >
 </fa-icon>
+=======
+    [icon]="fontAwesomePlusCircle"
+    class="my-success-color my-icon-font"
+    (click)="criar()"
+    size="lg"
+    title="Adicionar uma nova Funcionalidade"
+    >
+  </fa-icon>
+>>>>>>> 331941d57ca0ac14c0daf56b75892e722a99dfec
 
   <table class="table table-striped">
 
@@ -21,6 +31,7 @@
     <tbody>
       <tr *ngFor="let func of funcionalidades">
         <td>
+<<<<<<< HEAD
           <fa-icon
           [icon]="fontAwesomeTimeCircle"
           class="my-danger-color my-icon-font"
@@ -29,6 +40,27 @@
           title="Remover essa Funcionalidade"
           >
         </fa-icon>
+=======
+          <div class="btn-group">
+            <fa-icon
+              [icon]="fontAwesomePencil"
+              class="my-primary-color my-icon-font"
+              (click)="editar(func)"
+              size="lg"
+              title="Editar essa Funcionalidade"
+              >
+            </fa-icon>
+
+            <fa-icon
+                [icon]="fontAwesomeTimeCircle"
+                class="my-danger-color my-icon-font"
+                (click)="remover(func)"
+                size="lg"
+                title="Remover essa Funcionalidade"
+                >
+            </fa-icon>
+          </div>
+>>>>>>> 331941d57ca0ac14c0daf56b75892e722a99dfec
         </td>
         <td>
           <label [title]="func.especificacao">
