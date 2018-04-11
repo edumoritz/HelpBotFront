@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { ActivatedRoute } from '@angular/router';
+import { faBan } from '@fortawesome/free-solid-svg-icons';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 import { Modulo } from './../../../models/funcionalidade/modulo.model';
 import { AModuleService } from '../../../services-abstract/modulo.service';
@@ -10,6 +11,9 @@ import { AModuleService } from '../../../services-abstract/modulo.service';
   templateUrl: './modulo-cadastro.component.html'
 })
 export class ModuloCadastroComponent {
+
+  public fontAwesomeBan = faBan;
+  public fontAwesomeSave = faSave;
 
   public modulo = new Modulo();
 
