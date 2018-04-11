@@ -1,0 +1,41 @@
+<help-bot-page titulo="Modulos">
+
+  <button
+    type="button"
+    class="btn btn-xs btn-success"
+    (click)="criar()"
+    >
+    +
+  </button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let campo of campos">
+        <td>
+          <button
+            type="button"
+            class="btn btn-xs btn-primary"
+            (click)="editar(campo)"
+            title="Editar"
+            >
+            <fa name="pencil-alt"></fa>
+            <!-- <i class="fas fa-pencil-alt"></i> -->
+          </button>
+        </td>
+        <td>
+          <label [title]="campo.especificacao">
+            {{ campo.nome }}
+          </label>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</help-bot-page>

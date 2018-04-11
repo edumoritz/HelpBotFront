@@ -1,0 +1,44 @@
+<help-bot-page titulo="Funcionalidades">
+
+  <button
+    type="button"
+    class="btn btn-xs btn-success"
+    (click)="criar()"
+    >
+    +
+  </button>
+
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let func of funcionalidades">
+        <td>
+          <button
+            type="button"
+            class="btn btn-xs btn-primary"
+            (click)="editar(func)"
+            title="Editar"
+            >
+            <fa name="pencil-alt"></fa>
+            <!-- <i class="fas fa-pencil-alt"></i> -->
+          </button>
+        </td>
+        <td>
+          <label [title]="func.especificacao">
+            {{ func.nome }}
+          </label>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</help-bot-page>
+
