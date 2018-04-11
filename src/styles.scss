@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Colors bootstrap
+
+.my-danger-color {
+  color: #c9302c;
+}
+
+.my-success-color {
+  color: #5cb85c;
+}
+
+.my-success-color:hover {
+  color: #528b52;
+}
+
+.my-primary-color {
+  color: #337ab7;
+}
+
+.my-info-color {
+  color: #31b0d5;
+}
+
+.my-icon-font {
+  cursor: pointer;
+}
+
+.my-icon-font:hover {
+  transition: all 0.5s;
+  transform: scale(1.2);
+}

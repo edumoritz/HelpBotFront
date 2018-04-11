@@ -6,14 +6,14 @@ import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
 
 import { PageModule } from '../../components/page/page.module';
 
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     PageModule,
-    AngularFontAwesomeModule
+    FontAwesomeModule
   ],
   declarations: [
     ModuloVisualizacaoComponent,

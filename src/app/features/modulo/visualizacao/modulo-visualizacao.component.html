@@ -1,12 +1,15 @@
 <help-bot-page titulo="Modulos">
 
-  <button
-    type="button"
-    class="btn btn-xs btn-success"
-    (click)="criar()"
-    >
-    +
-  </button>
+  <div class="my-icon-font-div">
+    <fa-icon
+      [icon]="fontAwesomePlusCircle"
+      class="my-success-color my-icon-font"
+      (click)="criar()"
+      size="lg"
+      title="Adicionar um novo Módulo"
+      >
+    </fa-icon>
+  </div>
 
   <table class="table table-striped">
 
@@ -20,15 +23,25 @@
     <tbody>
       <tr *ngFor="let modulo of modulos">
         <td>
-          <button
-            type="button"
-            class="btn btn-xs btn-primary"
-            (click)="editar(modulo)"
-            title="Editar"
-            >
-            <fa name="pencil-alt"></fa>
-            <!-- <i class="fas fa-pencil-alt"></i> -->
-          </button>
+          <div class="btn-group">
+            <fa-icon
+              [icon]="fontAwesomePencil"
+              class="my-primary-color my-icon-font"
+              (click)="editar(modulo)"
+              size="lg"
+              title="Editar esse Módulo"
+              >
+            </fa-icon>
+
+            <fa-icon
+              [icon]="fontAwesomeTimeCircle"
+              class="my-danger-color my-icon-font"
+              (click)="remover(modulo)"
+              size="lg"
+              title="Remover esse Módulo"
+              >
+            </fa-icon>
+          </div>
         </td>
         <td>
           <label [title]="modulo.especificacao">
