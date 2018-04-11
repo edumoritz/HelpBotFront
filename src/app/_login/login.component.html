@@ -1,13 +1,13 @@
-<div>
-    <h1>HelpBot</h1>
-      <input placeholder="Usuário" [(ngModel)]="username" />
-      <input placeholder="Senha" type="password" [(ngModel)]="password" />  
+<help-bot-page align="center" titulo="HelpBot" tituloTag="h1">
+  
+    <input class="form-control input-sm" placeholder="Usuário" [(ngModel)]="username" />
+    <input class="form-control input-sm" placeholder="Senha" type="password" [(ngModel)]="password" />  
     <button
       color="primary"
       (click)="login()"
       [disabled]="!username || !password"
       >
       Logar
-    </button>
-  
-  </div>
+    </button> 
+    
+</help-bot-page>

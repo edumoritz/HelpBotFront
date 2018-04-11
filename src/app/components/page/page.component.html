@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  <h3>{{ titulo }}</h3>
+  <span *ngIf="!!html" [innerHTML]="html"></span>
 
   <ng-content></ng-content>
 

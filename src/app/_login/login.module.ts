@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { LoginService } from './login.service';
 import { LoginComponent } from './login.component';
+import { PageModule } from '../components/page/page.module';
 
 @NgModule({
   imports: [
-    FormsModule
+    FormsModule,
+    PageModule
   ],
   declarations: [
     LoginComponent
