@@ -17,7 +17,7 @@ export class PageComponent {
     }
   }
 
-  @Input() 
+  @Input()
   public set tituloTag(tituloTag: string) {
     if (tituloTag) {
       this.tituloTagValue = tituloTag;
@@ -40,9 +40,8 @@ export class PageComponent {
     let html = '';
 
     html += '<' + (this.tituloTagValue || 'h3') + '>';
-    html += this.tituloValue;    
+    html += this.tituloValue;
     html += '</' + (this.tituloTagValue || 'h3') + '>';
-    
 
     return this.domSanitizer.bypassSecurityTrustHtml(html);
 
