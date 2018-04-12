@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { LoginService } from './login.service';
 import { LoginComponent } from './login.component';
 import { PageModule } from '../components/page/page.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     FormsModule,
-    PageModule
+    PageModule,
+    FontAwesomeModule
   ],
   declarations: [
     LoginComponent

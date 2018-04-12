@@ -1,11 +1,28 @@
 <help-bot-page align="center" titulo="HelpBot" tituloTag="h1">
   
-    <input class="form-control input-sm" placeholder="Usuário" [(ngModel)]="username" />
-    <input class="form-control input-sm" placeholder="Senha" type="password" [(ngModel)]="password" />  
+    <fa-icon
+    [icon]="fontAwesomeHelpHirer"
+    class="my-helpbot-color my-icon-font"
+    size="6x"
+    >
+    </fa-icon>
+    <br><br>
+    <div class="row my-fex-center">
+      <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group"> 
+        <input class="form-control input-sm" placeholder="Usuário" [(ngModel)]="username" />     
+      </div>
+    </div>
+    
+    <div class="row my-fex-center">
+      <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group"> 
+          <input class="form-control input-sm" placeholder="Senha" type="password" [(ngModel)]="password" />
+      </div>
+    </div> 
     <button
       color="primary"
       (click)="login()"
       [disabled]="!username || !password"
+      class="btn btn-primary"
       >
       Logar
     </button> 
