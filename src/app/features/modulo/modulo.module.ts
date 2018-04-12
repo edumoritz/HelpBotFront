@@ -7,13 +7,15 @@ import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
 import { PageModule } from '../../components/page/page.module';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OpcoesModule } from '../../components/opcoes/opcoes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     PageModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    OpcoesModule
   ],
   declarations: [
     ModuloVisualizacaoComponent,

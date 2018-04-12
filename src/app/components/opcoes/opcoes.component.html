@@ -1,0 +1,13 @@
+<div class="principal" [style.left]="'calc(50% - ' + ((opcoes.length / 2) * tamanhoIcone) + 'px)'">
+
+  <fa-icon
+    *ngFor="let opcao of opcoes"
+    [icon]="opcao.icone"
+    [class]="'my-' + opcao.cor + '-color my-icon-font'"
+    (click)="opcao.acao()"
+    size="lg"
+    [title]="opcao.titulo"
+    >
+  </fa-icon>
+
+</div>

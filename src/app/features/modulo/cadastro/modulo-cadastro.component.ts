@@ -5,6 +5,7 @@ import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 import { Modulo } from './../../../models/funcionalidade/modulo.model';
 import { AModuleService } from '../../../services-abstract/modulo.service';
+import { Opcoes } from '../../../components/opcoes/opcoes.model';
 
 @Component({
   selector: 'help-bot-modulo-cadastro',
@@ -16,6 +17,21 @@ export class ModuloCadastroComponent {
   public fontAwesomeSave = faSave;
 
   public modulo = new Modulo();
+
+  public opcoes = [
+    {
+      icone: faBan,
+      acao: () => this.cancelar(),
+      cor: 'danger',
+      titulo: 'Cancelar'
+    },
+    {
+      icone: faSave,
+      acao: () => this.salvar(),
+      cor: 'primary',
+      titulo: 'Salvar'
+    }
+  ] as Opcoes[];
 
   constructor(
     private moduleService: AModuleService,
