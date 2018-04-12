@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { faHireAHelper } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
  selector: 'help-bot-login',
@@ -13,6 +14,7 @@ export class LoginComponent {
 
   public username: string;
   public password: string;
+  public fontAwesomeHelpHirer = faHireAHelper;
 
   constructor(
     private loginService: LoginService,
