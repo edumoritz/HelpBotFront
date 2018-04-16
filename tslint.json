@@ -119,7 +119,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "help-bot",
+      "helpBot",
       "camelCase"
     ],
     "component-selector": [

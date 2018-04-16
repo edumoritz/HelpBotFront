@@ -5,7 +5,7 @@ import { UserControllerService } from './core/user-controller.service';
 import { LoginEventService } from './core/login-event.service';
 
 @Component({
-  selector: 'help-root',
+  selector: 'help-bot',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

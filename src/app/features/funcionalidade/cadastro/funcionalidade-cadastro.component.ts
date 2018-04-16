@@ -15,10 +15,10 @@ export class FuncionalidadeCadastroComponent {
     private funcionalidadeService: AFuncionalidadeService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.activatedRoute.params.subscribe((param)=>{
+    this.activatedRoute.params.subscribe((param) => {
       const id = param['id'];
 
-      if(id !== 'null') {
+      if (id !== 'null') {
         this.funcionalidadeService.getOne(Number(id)).subscribe((funcionalidade) => {
           this.funcionalidade.id = funcionalidade.id;
           this.funcionalidade.especificacao = funcionalidade.especificacao;
@@ -29,14 +29,14 @@ export class FuncionalidadeCadastroComponent {
    }
 
    public salvar(): void {
-     if(this.funcionalidade.id) {
+     if (this.funcionalidade.id) {
        this.funcionalidadeService.put(this.funcionalidade).subscribe((funcionalidade) => {
          window.history.back();
        });
      } else {
        this.funcionalidadeService.post(this.funcionalidade).subscribe((funcionalidade) => {
          window.history.back();
-       })
+       });
      }
    }
 

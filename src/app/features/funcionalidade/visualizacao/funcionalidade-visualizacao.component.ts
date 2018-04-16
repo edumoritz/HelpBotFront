@@ -22,7 +22,7 @@ export class FuncionalidadeVisualizacaoComponent {
     private funcionalidadeService: AFuncionalidadeService,
     private router: Router
   ) {
-    this.buscarTodos();    
+    this.buscarTodos();
    }
 
    public editar(funcionalidade: Funcionalidade): void {
@@ -36,7 +36,7 @@ export class FuncionalidadeVisualizacaoComponent {
   public remover(func: Funcionalidade): void {
     this.funcionalidadeService.delete(func.id).subscribe(() => this.buscarTodos());
   }
-  
+
   public buscarTodos(): void {
     const paginacao = new Paginacao();
     paginacao.page = 0;

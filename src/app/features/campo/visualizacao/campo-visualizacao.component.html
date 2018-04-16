@@ -1,50 +1,41 @@
-<help-bot-page titulo="Campos">
-  <fa-icon
+<help-bot-page titulo="Campos"> <fa-icon
   [icon]="fontAwesomePlusCircle"
   class="my-success-color my-icon-font"
   (click)="criar()"
   size="lg"
-  title="Adicionar um novo Campo"
-  >
-</fa-icon>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Nome</th>
-      </tr>
-    </thead>
+  title="Adicionar um novo Campo"> </fa-icon>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nome</th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <tr *ngFor="let campo of campos">
-        <td>
+  <tbody>
+    <tr *ngFor="let campo of campos">
+      <td>
+        <fa-icon
+          [icon]="fontAwesomeTimeCircle"
+          class="my-danger-color my-icon-font"
+          (click)="remover(campo)"
+          size="lg"
+          title="Remover esse Campo"> </fa-icon>
+        <div class="btn-group">
           <fa-icon
-              [icon]="fontAwesomeTimeCircle"
-              class="my-danger-color my-icon-font"
-              (click)="remover(campo)"
-              size="lg"
-              title="Remover esse Campo"              
-              >
-            </fa-icon>
-            <div class="btn-group">
-                <fa-icon
-                [icon]="fontAwesomePencil"
-                class="my-primary-color my-icon-font"
-                (click)="editar(campo)"
-                size="lg"
-                title="Editar esse Campo"
-                >
-              </fa-icon>
-            </div>
-        </td>
-        <td>
-          <label [title]="campo.especificacao">
-            {{ campo.nome }}
-          </label>
-        </td>
-      </tr>
-    </tbody>
+            [icon]="fontAwesomePencil"
+            class="my-primary-color my-icon-font"
+            (click)="editar(campo)"
+            size="lg"
+            title="Editar esse Campo"> </fa-icon>
+        </div>
+      </td>
+      <td>
+        <label [title]="campo.especificacao"> {{ campo.nome }} </label>
+      </td>
+    </tr>
+  </tbody>
 
-  </table>
+</table>
 
 </help-bot-page>

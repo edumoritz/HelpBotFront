@@ -5,7 +5,6 @@ import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 import { Modulo } from './../../../models/funcionalidade/modulo.model';
 import { AModuleService } from '../../../services-abstract/modulo.service';
-import { Opcoes } from '../../../components/opcoes/opcoes.model';
 
 @Component({
   selector: 'help-bot-modulo-cadastro',
@@ -31,7 +30,7 @@ export class ModuloCadastroComponent {
       cor: 'primary',
       titulo: 'Salvar'
     }
-  ] as Opcoes[];
+  ] as any[];
 
   constructor(
     private moduleService: AModuleService,

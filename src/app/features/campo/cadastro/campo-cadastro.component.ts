@@ -12,7 +12,7 @@ export class CampoCadastroComponent {
   constructor(
     private campoService: ACampoService,
     private activatedRoute: ActivatedRoute
-    ) {
+  ) {
 
     this.activatedRoute.params.subscribe((param) => {
       const id = param['id'];
@@ -37,7 +37,7 @@ export class CampoCadastroComponent {
         window.history.back();
       });
     }
-  }  
+  }
 
 
 

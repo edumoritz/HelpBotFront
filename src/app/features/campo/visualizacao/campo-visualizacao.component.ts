@@ -18,37 +18,37 @@ export class CampoVisualizacaoComponent {
   public campos = [] as Campo[];
 
   constructor(
-  
+
     private campoService: ACampoService,
-    private router : Router
+    private router: Router
 
-    ) { 
+  ) {
 
-      this.buscarTodos();  
-      
-    }
-    public editar(campo: Campo): void {
-      this.router.navigate([`/app/campo-cadastro/${campo.id}`]);
-    }
-  
-    public criar(): void {
-      this.router.navigate([`/app/campo-cadastro/null`]);
-    }
+    this.buscarTodos();
 
-    public remover(campo: Campo): void {
-      this.campoService.delete(campo.id).subscribe(() => this.buscarTodos());
-    }
+  }
+  public editar(campo: Campo): void {
+    this.router.navigate([`/app/campo-cadastro/${campo.id}`]);
+  }
 
-    public buscarTodos(): void {
-      const paginacao = new Paginacao();
-      paginacao.page = 0;
-      paginacao.itensPerPage = 20;
-      
-      
-      this.campoService.getAll(paginacao).subscribe((response) => {
-        this.campos = response.itens;
-        paginacao.totalItens = response.qtdItens;
-      });
-    }
+  public criar(): void {
+    this.router.navigate([`/app/campo-cadastro/null`]);
+  }
+
+  public remover(campo: Campo): void {
+    this.campoService.delete(campo.id).subscribe(() => this.buscarTodos());
+  }
+
+  public buscarTodos(): void {
+    const paginacao = new Paginacao();
+    paginacao.page = 0;
+    paginacao.itensPerPage = 20;
+
+
+    this.campoService.getAll(paginacao).subscribe((response) => {
+      this.campos = response.itens;
+      paginacao.totalItens = response.qtdItens;
+    });
+  }
 }
 

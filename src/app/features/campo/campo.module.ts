@@ -12,7 +12,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     PageModule,
     FontAwesomeModule
-    
   ],
   declarations: [
     CampoVisualizacaoComponent,

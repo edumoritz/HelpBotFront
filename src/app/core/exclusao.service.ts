@@ -1,4 +1,4 @@
-//import { MatDialog } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { ExclusaoComponent } from '../core/exclusao.component';
@@ -7,7 +7,7 @@ import { ExclusaoComponent } from '../core/exclusao.component';
 export class ExclusaoService {
 
   constructor(
-    //private matDialog: MatDialog
+    // private matDialog: MatDialog
   ) { }
 
   /*

@@ -6,7 +6,7 @@ import { FormValidatorDirective } from './form-validator.directive';
 
 // TODO: Tenque fazer mesmo.
 @Directive({
-  selector: '[HelpFormFieldValidator]'
+  selector: '[helpBotFormFieldValidator]'
 })
 export class FormFieldValidatorDirective {
 

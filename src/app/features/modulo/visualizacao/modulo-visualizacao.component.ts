@@ -1,3 +1,4 @@
+import { ModalService } from '../../../components/modal/modal.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
@@ -8,6 +9,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { Modulo } from '../../../models/funcionalidade/modulo.model';
 import { AModuleService } from '../../../services-abstract/modulo.service';
+import { ModuloCadastroModalComponent } from '../cadastro/modulo-cadastro-modal.component';
 
 @Component({
   selector: 'help-bot-modulo-visualizacao',
@@ -23,7 +25,8 @@ export class ModuloVisualizacaoComponent {
 
   constructor(
     private moduleService: AModuleService,
-    private router: Router
+    private router: Router,
+    private modalService: ModalService
   ) {
     this.buscarTodos();
   }
@@ -33,7 +36,10 @@ export class ModuloVisualizacaoComponent {
   }
 
   public criar(): void {
-    this.router.navigate([`/app/modulo-cadastro/null`]);
+    //    this.router.navigate([`/app/modulo-cadastro/null`]);
+    this.modalService.addModal<void, void>(ModuloCadastroModalComponent).subscribe(() => {
+      console.log('Fechou');
+    });
   }
 
   public remover(modulo: Modulo): void {

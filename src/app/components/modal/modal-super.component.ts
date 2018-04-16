@@ -2,13 +2,15 @@ import { ModalService } from './modal.service';
 
 export class ModalSuperComponent<Parametros, Resposta> {
 
-  public idModal: number;
+  public resposta: Resposta;
+
+  public parametros: Parametros;
 
   constructor(
     public modalService: ModalService
   ) { }
 
-  public fecharModal(): void {
+  protected fecharModal(): void {
     this.modalService.fecharModal(this);
   }
 

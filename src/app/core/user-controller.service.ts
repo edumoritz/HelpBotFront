@@ -26,10 +26,10 @@ export class UserControllerService {
         observer.next(this.userLogado);
       } else {
         this.httpClient.get<Usuario>('/api/usuarios/logado')
-        .subscribe((res) => {
-          this.userLogado = res;
-          observer.next(this.userLogado);
-      });
+          .subscribe((res) => {
+            this.userLogado = res;
+            observer.next(this.userLogado);
+          });
       }
     });
   }

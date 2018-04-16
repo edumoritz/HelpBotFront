@@ -6,7 +6,7 @@ import { EventEmitter } from '@angular/core';
 
 // TODO: Tenque fazer mesmo.
 @Directive({
-  selector: '[HelpFormValidator]'
+  selector: '[helpBotFormValidator]'
 })
 export class FormValidatorDirective implements OnInit {
 
@@ -15,8 +15,8 @@ export class FormValidatorDirective implements OnInit {
   @Output() public validator = new EventEmitter<(field: string) => boolean>();
 
   private fields:
-    Array<{ field: string, requerido: boolean, validacao: (value: string) => boolean }>
-    = [];
+  Array<{ field: string, requerido: boolean, validacao: (value: string) => boolean }>
+  = [];
 
   public ngOnInit(): void {
     this.validator.emit(this.validar);
