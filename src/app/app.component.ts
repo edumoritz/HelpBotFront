@@ -17,10 +17,9 @@ export class AppComponent {
     private userControllerService: UserControllerService
   ) {
 
-    /**
-     * if (!this.websocketService.isConected()) {
-      this.websocketService.connect();
-    }
+    // if (!this.websocketService.isConected()) {
+    //   this.websocketService.connect();
+    // }
 
     this.loginEventService.getLoginEvent().subscribe((evento) => {
 
@@ -29,41 +28,22 @@ export class AppComponent {
         window.localStorage.removeItem('UniRestaurantUser');
         window.localStorage.removeItem('UniRestaurantPassword');
 
-        if (this.websocketService.isConected()) {
-          this.websocketService.disconnect();
-        }
+        // if (this.websocketService.isConected()) {
+        //   this.websocketService.disconnect();
+        // }
       } else {
 
-        if (!this.websocketService.isConected()) {
-          this.websocketService.connect();
-          this.websocketService.subscribeCozinha().subscribe((pedidoPrato) => {
-            this.cozinhaWebsocketService.notify(pedidoPrato);
-          });
-        }
+        // if (!this.websocketService.isConected()) {
+        //   this.websocketService.connect();
+        //   this.websocketService.subscribeCozinha().subscribe((pedidoPrato) => {
+        //     this.cozinhaWebsocketService.notify(pedidoPrato);
+        //   });
+        // }
 
-        this.userControllerService.getUserLogado().subscribe((user) => {
-          switch (user.pemissao) {
-            case 'GARCOM':
-              this.router.navigate(['/app/pedidos']);
-              break;
-            case 'BARMAN':
-              this.router.navigate(['/app/bebidas']);
-              break;
-            case 'CAIXA':
-              this.router.navigate(['/app/caixa']);
-              break;
-            case 'COZINHEIRO':
-              this.router.navigate(['/app/cozinha']);
-              break;
-            case 'ADMIN':
-              this.router.navigate(['/app/']);
-              return;
-          }
-        });
+        this.router.navigate(['/home']);
       }
 
     });
-     */
   }
 
 }

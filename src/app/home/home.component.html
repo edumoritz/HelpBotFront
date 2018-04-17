@@ -1,0 +1,23 @@
+<div class="full-screen">
+  <div class="menu-home">
+
+    <div *ngFor="let itemPaiMenu of itensMenu" (click)="itemPaiMenu.aberto = !itemPaiMenu.aberto">
+
+      <label class="item-selecao">{{ itemPaiMenu.nome }}</label>
+
+      <div *ngIf="itemPaiMenu.aberto">
+        <div *ngFor="let itemMenu of itemPaiMenu.filhos">
+
+          <div class="icone-menu">
+            <fa-icon [icon]="faEmpresaIcone"></fa-icon>
+          </div>
+          <a class="item-selecao" [routerLink]="itemMenu.rota">{{ itemMenu.nome }}</a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <router-outlet></router-outlet>
+</div>

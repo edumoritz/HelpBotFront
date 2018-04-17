@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './_login/login.component';
@@ -12,7 +13,8 @@ export const APP_ROUTES: Routes = [
     component: LoginComponent
   },
   {
-    path: 'app',
+    path: 'home',
+    component: HomeComponent,
     children: [
       ...campoRoute,
       ...moduloRoute,
@@ -20,5 +22,5 @@ export const APP_ROUTES: Routes = [
       ...regraCampoRoute
     ]
   },
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/home' }
 ];

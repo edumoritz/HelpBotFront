@@ -1,0 +1,34 @@
+.full-screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 26, 255, 0.3);
+  display: flex;
+}
+
+.menu-home {
+  height: 100%;
+  background-color: rgba(4, 32, 126, 0.795);
+  width: 100px;
+  transition: 0.3s;
+}
+
+.icone-menu {
+
+}
+
+@media only screen and (max-width: 1080px) {
+  .menu-home {
+    height: 100%;
+    background-color: rgba(4, 32, 126, 0.795);
+    width: 20px;
+  }
+
+  .menu-home:hover {
+    height: 100%;
+    background-color: rgba(4, 32, 126, 0.795);
+    width: 100px;
+  }
+}
