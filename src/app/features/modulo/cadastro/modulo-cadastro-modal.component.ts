@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'help-bot-modulo-cadastro-modal',
-  templateUrl: './modulo-cadastro-modal.component.html'
+  templateUrl: './modulo-cadastro-modal.component.html',
+  styleUrls: ['./modulo-cadastro.component.scss']
 })
 export class ModuloCadastroModalComponent extends ModalSuperComponent<void, void> {
 
