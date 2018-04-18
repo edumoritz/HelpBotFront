@@ -15,4 +15,10 @@ export class ModuloCadastroModalComponent extends ModalSuperComponent<void, void
     super(modalService);
   }
 
+  public fecharModal() {
+    this.modalService.fecharModal(ModuloCadastroModalComponent).subscribe(() => {
+      console.log('Fechou');
+    });
+  }
+
 }
