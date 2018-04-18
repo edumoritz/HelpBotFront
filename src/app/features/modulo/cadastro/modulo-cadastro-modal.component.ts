@@ -16,9 +16,9 @@ export class ModuloCadastroModalComponent extends ModalSuperComponent<void, void
   }
 
   public fecharModal() {
-    this.modalService.fecharModal(ModuloCadastroModalComponent).subscribe(() => {
-      console.log('Fechou');
-    });
+    // this.modalService.fecharModal(ModuloCadastroModalComponent).subscribe(() => {
+    //   console.log('Fechou');
+    // });
   }
 
 }
