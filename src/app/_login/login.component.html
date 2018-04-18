@@ -1,23 +1,27 @@
-<help-bot-page align="center" titulo="HelpBot" tituloTag="h1">
+<div class="container-center">
+
+  <h1 align="center">HelpBot</h1>
   
-    <fa-icon
+  <fa-icon
     [icon]="fontAwesomeHelpHirer"
-    class="my-helpbot-color my-icon-font"
+    class="my-helpbot-color"
+    align="center"
     size="6x"
     >
-    </fa-icon>
-    <br><br>
-    <div class="row my-fex-center">
-      <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group"> 
-        <input class="form-control input-sm" placeholder="Usuário" [(ngModel)]="username" />     
-      </div>
+  </fa-icon>
+  <br><br>
+  <div class="row my-fex-center">
+    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group"> 
+      <input class="form-control input-sm" placeholder="Usuário" [(ngModel)]="username" />     
     </div>
-    
-    <div class="row my-fex-center">
-      <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group"> 
-          <input class="form-control input-sm" placeholder="Senha" type="password" [(ngModel)]="password" />
-      </div>
-    </div> 
+  </div>
+  
+  <div class="row my-fex-center">
+    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group"> 
+        <input class="form-control input-sm" placeholder="Senha" type="password" [(ngModel)]="password" />
+    </div>
+  </div>
+  <div align="center"> 
     <button
       color="primary"
       (click)="login()"
@@ -26,5 +30,5 @@
       >
       Logar
     </button> 
-    
-</help-bot-page>
+  </div>
+</div>
