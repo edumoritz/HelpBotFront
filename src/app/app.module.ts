@@ -20,6 +20,8 @@ import { providersServices } from './services-providers/service-provider.factory
 import { FeaturesModule } from './features/features.module';
 
 import { HomeModule } from './home/home.module';
+import { demoRoute } from './demo/demo.routing';
+import { DemoModule } from './demo/demo.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HomeModule } from './home/home.module';
     RouterModule.forRoot(APP_ROUTES),
     CoreModule.forRoot(),
     HomeModule,
-    FeaturesModule
+    FeaturesModule,
+    DemoModule
   ],
   providers: [
     {
