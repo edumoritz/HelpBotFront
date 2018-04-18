@@ -1,17 +1,47 @@
 <div class="full-screen">
-  <div class="menu-home">
 
-    <div *ngFor="let itemPaiMenu of itensMenu" (click)="itemPaiMenu.aberto = !itemPaiMenu.aberto">
+  <div
+    class="menu-home"
+    [class.menu-home-closed]="menuHomeclosed"
+    (window:resize)="onWindowResize($event.target)"
+    (mouseover)="menuHomeclosed = false"
+    (mouseleave)="sizePequeno ? menuHomeclosed = true : false"
+    >
 
-      <label class="item-selecao">{{ itemPaiMenu.nome }}</label>
+    <div class="icone-menu-help-bot" *ngIf="!menuHomeclosed">
+      <fa-icon [icon]="faHelpBot" size="6x"></fa-icon>
+    </div>
+
+    <div class="icone-menu-help-bot" *ngIf="menuHomeclosed">
+      <fa-icon [icon]="faHelpBot"></fa-icon>
+    </div>
+
+    <div
+      *ngFor="let itemPaiMenu of itensMenu"
+      class="menu-itens"
+      >
+
+      <div class="item-menu-pai" (click)="toogleMenuPai(itemPaiMenu)">
+        <div class="icone-menu">
+          <fa-icon [icon]="faEmpresaIcone"></fa-icon>
+        </div>
+        <label class="item-selecao" *ngIf="!menuHomeclosed">&nbsp;{{ itemPaiMenu.nome }}</label>
+      </div>
 
       <div *ngIf="itemPaiMenu.aberto">
         <div *ngFor="let itemMenu of itemPaiMenu.filhos">
 
-          <div class="icone-menu">
-            <fa-icon [icon]="faEmpresaIcone"></fa-icon>
+          <div class="item-menu-filho" [routerLink]="itemMenu.rota">
+            <div class="icone-menu">
+              <fa-icon [icon]="faEmpresaIcone"></fa-icon>
+            </div>
+            <label
+              class="item-selecao"
+              *ngIf="!menuHomeclosed"
+              >
+              &nbsp;{{ itemMenu.nome }}
+            </label>
           </div>
-          <a class="item-selecao" [routerLink]="itemMenu.rota">{{ itemMenu.nome }}</a>
 
         </div>
       </div>

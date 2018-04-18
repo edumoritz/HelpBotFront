@@ -8,27 +8,59 @@
   display: flex;
 }
 
+.full-screen * {
+  user-select: none;
+}
+
 .menu-home {
   height: 100%;
   background-color: rgba(4, 32, 126, 0.795);
-  width: 100px;
+  width: 180px;
   transition: 0.3s;
 }
 
-.icone-menu {
-
+.item-menu-pai {
+  display: flex;
+  border-bottom: 1px solid rgba(4, 32, 126, 1);
+  background-color: rgb(25, 49, 128);
+  padding: 8px;
+  cursor: pointer;
+  color: #d6d6d6;
+  transition: 0.3s;
 }
 
-@media only screen and (max-width: 1080px) {
-  .menu-home {
-    height: 100%;
-    background-color: rgba(4, 32, 126, 0.795);
-    width: 20px;
-  }
+.item-menu-pai * {
+  cursor: pointer;
+}
 
-  .menu-home:hover {
-    height: 100%;
-    background-color: rgba(4, 32, 126, 0.795);
-    width: 100px;
-  }
+.icone-menu-help-bot {
+  padding: 8px;
+  color: #d6d6d6;
+  text-align: center;
+}
+
+.item-menu-pai:hover {
+  background-color: rgb(40, 85, 153);
+}
+
+.item-menu-filho {
+  padding: 8px;
+  padding-left: 15px;
+  display: flex;
+  color: #d6d6d6;
+  cursor: pointer;
+}
+
+.item-menu-filho * {
+  cursor: pointer;
+}
+
+.item-menu-filho:hover {
+  background-color: rgb(40, 85, 153);
+}
+
+.menu-home-closed {
+  height: 100%;
+  background-color: rgba(4, 32, 126, 0.795);
+  width: 40px;
 }
