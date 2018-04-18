@@ -10,6 +10,14 @@ export class ModuleTestService implements AModuleService {
   private readonly listaModulos = new Map<number, Modulo>();
   private idPadrao = 1;
 
+  constructor() {
+    this.post({ nome: 'aaa' });
+    this.post({ nome: '123' });
+    this.post({ nome: '456' });
+    this.post({ nome: '789' });
+    this.post({ nome: 'dsf' });
+  }
+
   public post(modulo: Modulo): Observable<Modulo> {
     return new Observable((observer) => {
       if (modulo.id) {

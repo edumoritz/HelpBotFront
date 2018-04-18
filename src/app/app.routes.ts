@@ -6,6 +6,7 @@ import { campoRoute } from './features/campo/campo.routing';
 import { moduloRoute } from './features/modulo/modulo.routing';
 import { regraCampoRoute } from './features/regra-campo/regra-campo.routing';
 import { funcionalidadesRoute } from './features/funcionalidade/funcionalidade.routing';
+import { demoRoute } from './demo/demo.routing';
 
 export const APP_ROUTES: Routes = [
   {
@@ -19,7 +20,8 @@ export const APP_ROUTES: Routes = [
       ...campoRoute,
       ...moduloRoute,
       ...funcionalidadesRoute,
-      ...regraCampoRoute
+      ...regraCampoRoute,
+      ...demoRoute
     ]
   },
   { path: '**', redirectTo: '/home' }
