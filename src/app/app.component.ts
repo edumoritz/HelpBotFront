@@ -25,8 +25,8 @@ export class AppComponent {
 
       if (!evento) {
         this.router.navigate(['/login']);
-        window.localStorage.removeItem('UniRestaurantUser');
-        window.localStorage.removeItem('UniRestaurantPassword');
+        window.localStorage.removeItem('HelpBotUser');
+        window.localStorage.removeItem('HelpBotPassword');
 
         // if (this.websocketService.isConected()) {
         //   this.websocketService.disconnect();

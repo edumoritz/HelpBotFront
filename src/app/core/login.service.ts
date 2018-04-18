@@ -45,6 +45,16 @@ export class LoginService {
     });
   }
 
+  public logout(): void {
+    const headers = new HttpHeaders();
 
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', `Bearer ${this.tokenService.getAccessToken()}`);
+
+    this.http.post('logout', {}, { headers: headers }).subscribe(() => {
+      this.loginEventService.logout();
+    });
+  }
 
 }

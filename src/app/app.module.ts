@@ -28,7 +28,7 @@ import { HomeModule } from './home/home.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    LoginModule.foorRoot(),
+    LoginModule,
     RouterModule.forRoot(APP_ROUTES),
     CoreModule.forRoot(),
     HomeModule,

@@ -11,6 +11,8 @@ import { FormFieldValidatorDirective } from './form-field-validator.directive';
 import { ExclusaoComponent } from './exclusao.component';
 import { ExclusaoService } from './exclusao.service';
 
+import { LoginService } from './login.service';
+
 @NgModule({
   imports: [
   ],
@@ -36,6 +38,7 @@ export class CoreModule {
         LoginEventService,
         UserControllerService,
         ExclusaoService,
+        LoginService
       ]
     };
   }

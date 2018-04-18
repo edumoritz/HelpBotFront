@@ -1,6 +1,19 @@
-import { faHireAHelper, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { LoginEventService } from './../core/login-event.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { faHireAHelper } from '@fortawesome/free-brands-svg-icons';
+import { faHubspot } from '@fortawesome/free-brands-svg-icons';
+import { faElementor } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge } from '@fortawesome/free-solid-svg-icons';
+
+import { LoginService } from '../core/login.service';
 
 export interface IItemPaiMenu {
   nome: string;
@@ -10,9 +23,9 @@ export interface IItemPaiMenu {
 }
 
 export interface IItemFilhoMenu {
-  rota: string;
+  acao: () => void;
   nome: string;
-  icon?: IconDefinition;
+  icon: IconDefinition;
 }
 
 @Component({
@@ -22,7 +35,6 @@ export interface IItemFilhoMenu {
 })
 export class HomeComponent {
 
-  public faEmpresaIcone = faBuilding;
   public faHelpBot = faHireAHelper;
 
   public itensMenu = [] as IItemPaiMenu[];
@@ -30,7 +42,11 @@ export class HomeComponent {
   public sizePequeno = false;
   public menuHomeclosed = false;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private loginService: LoginService,
+    private loginEventService: LoginEventService
+  ) {
     this.onWindowResize(window);
 
     this.itensMenu.push(
@@ -40,24 +56,49 @@ export class HomeComponent {
         icon: faBuilding,
         filhos: [
           {
-            rota: '/home/modulo-visualizacao',
-            nome: 'Módulos'
+            acao: () => this.router.navigate(['/home/modulo-visualizacao']),
+            nome: 'Módulos',
+            icon: faThLarge
           },
           {
-            rota: '/home/funcionalidade-visualizacao',
-            nome: 'Funcionalidades'
+            acao: () => this.router.navigate(['/home/funcionalidade-visualizacao']),
+            nome: 'Funcionalidades',
+            icon: faHubspot
           },
           {
-            rota: '/home/campo-visualizacao',
-            nome: 'Campos'
+            acao: () => this.router.navigate(['/home/campo-visualizacao']),
+            nome: 'Campos',
+            icon: faEdit
           },
           {
-            rota: '/home/regra-campo-visualizacao',
-            nome: 'Regras de Campos'
+            acao: () => this.router.navigate(['/home/regra-campo-visualizacao']),
+            nome: 'Regras de Campos',
+            icon: faCog
+          }
+        ]
+      },
+      {
+        nome: 'Conta',
+        aberto: false,
+        icon: faElementor,
+        filhos: [
+          {
+            acao: () => this.router.navigate(['']),
+            nome: 'Perfil',
+            icon: faUser
+          },
+          {
+            acao: () => this.logout(),
+            nome: 'Sair',
+            icon: faSignOutAlt
           }
         ]
       }
     );
+  }
+
+  public logout(): void {
+    this.loginService.logout();
   }
 
   public onWindowResize(evento: any): void {

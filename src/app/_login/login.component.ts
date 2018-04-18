@@ -1,6 +1,7 @@
+import { LoginEventService } from './../core/login-event.service';
 import { CriptService } from './../core/cript.service';
 import { Router } from '@angular/router';
-import { LoginService } from './login.service';
+import { LoginService } from '../core/login.service';
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { faHireAHelper } from '@fortawesome/free-brands-svg-icons';
@@ -18,7 +19,8 @@ export class LoginComponent {
 
   constructor(
     private loginService: LoginService,
-    private route: Router
+    private route: Router,
+    private loginEventService: LoginEventService
   ) {
     const usernameEncoded = window.localStorage.getItem('HelpBotUser');
 
@@ -42,11 +44,10 @@ export class LoginComponent {
     window.localStorage.removeItem('HelpBotPassword');
     this.loginService.login(this.username, this.password).subscribe((resposta) => {
       if (resposta) {
-        console.log('Logado');
         window.localStorage.setItem('HelpBotUser', CriptService.encode(this.username));
         window.localStorage.setItem('HelpBotPassword', CriptService.encode(this.password));
+        this.loginEventService.login();
       } else {
-        console.log('Não logou!!!');
       }
     });
   }

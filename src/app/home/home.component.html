@@ -23,7 +23,7 @@
 
       <div class="item-menu-pai" (click)="toogleMenuPai(itemPaiMenu)">
         <div class="icone-menu">
-          <fa-icon [icon]="faEmpresaIcone"></fa-icon>
+          <fa-icon [icon]="itemPaiMenu.icon"></fa-icon>
         </div>
         <label class="item-selecao" *ngIf="!menuHomeclosed">&nbsp;{{ itemPaiMenu.nome }}</label>
       </div>
@@ -31,9 +31,9 @@
       <div *ngIf="itemPaiMenu.aberto">
         <div *ngFor="let itemMenu of itemPaiMenu.filhos">
 
-          <div class="item-menu-filho" [routerLink]="itemMenu.rota">
+          <div class="item-menu-filho" (click)="itemMenu.acao()">
             <div class="icone-menu">
-              <fa-icon [icon]="faEmpresaIcone"></fa-icon>
+              <fa-icon [icon]="itemMenu.icon"></fa-icon>
             </div>
             <label
               class="item-selecao"
