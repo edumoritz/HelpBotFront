@@ -74,6 +74,11 @@ export class HomeComponent {
             acao: () => this.router.navigate(['/home/regra-campo-visualizacao']),
             nome: 'Regras de Campos',
             icon: faCog
+          },
+          {
+            acao: () => this.router.navigate(['/home/demo-visualizacao']),
+            nome: 'Demonstração',
+            icon: faCog
           }
         ]
       },
