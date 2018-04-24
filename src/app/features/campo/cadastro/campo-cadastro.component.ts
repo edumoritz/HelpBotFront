@@ -2,13 +2,34 @@ import { Component } from '@angular/core';
 import { ACampoService } from '../../../services-abstract/campo.service';
 import { Campo } from '../../../models/funcionalidade/campo.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faSave, faBan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'help-bot-campo-cadastro',
   templateUrl: './campo-cadastro.component.html'
 })
 export class CampoCadastroComponent {
+
+  public fontAwesomeBan = faBan;
+  public fontAwesomeSave = faSave;
+
   public campo = new Campo();
+
+  public opcoes = [
+    {
+      icone: faBan,
+      acao: () => this.cancelar(),
+      cor: 'danger',
+      titulo: 'Cancelar'
+    },
+    {
+      icone: faSave,
+      acao: () => this.salvar(),
+      cor: 'primary',
+      titulo: 'Salvar'
+    }
+  ] as any[];
+  
   constructor(
     private campoService: ACampoService,
     private activatedRoute: ActivatedRoute

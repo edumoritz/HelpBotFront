@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<help-bot-page titulo="Campos">
 
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -25,16 +25,24 @@
     </div>
   </div>
 
-  <div class="btn-group">
-    <button
-      type="button"
-      class="btn btn-sm btn-danger"
-      (click)="cancelar()">Cancelar</button>
+  <div>
+      <fa-icon
+        [icon]="fontAwesomeBan"
+        class="my-danger-color my-icon-font"
+        (click)="cancelar()"
+        size="lg"
+        title="Cancelar"
+        >
+      </fa-icon>
+  
+      <fa-icon
+        [icon]="fontAwesomeSave"
+        class="my-primary-color my-icon-font"
+        (click)="salvar()"
+        size="lg"
+        title="Salvar"
+        >
+      </fa-icon>
+    </div>
 
-    <button
-      type="button"
-      class="btn btn-sm btn-primary"
-      (click)="salvar()">Salvar</button>
-  </div>
-
-</div>
+</help-bot-page>
