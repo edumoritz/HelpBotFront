@@ -1,0 +1,70 @@
+$bordaPadrao: #888888;
+
+.modal-janela {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: abrindoModal 0.6s ease;
+}
+
+.modal-corpo {
+  box-shadow: 3px 5px 15px 0px rgba(0,0,0,0.75);
+  height: 100%;
+  min-width: 60%;
+  background-color: #f6f6f6;
+  border-radius: 4px;
+  position: relative;
+  background-color: #f0f0f0;
+  animation: abrindoModalCorpo 0.6s ease;
+}
+
+.modal-cabecalho {
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+  border-bottom: 1px solid $bordaPadrao;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+}
+
+.modal-conteudo {
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+}
+
+.modal-rodape {
+  display: flex;
+  justify-content: flex-end;
+  // border-top: 1px solid $bordaPadrao;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+
+@keyframes abrindoModal {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes abrindoModalCorpo {
+  from { opacity: 0; margin-top: -20% }
+  to { opacity: 1; margin-top: 0 }
+}

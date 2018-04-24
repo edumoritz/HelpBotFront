@@ -1,0 +1,11 @@
+.modal-rodape {
+  display: flex;
+  justify-content: flex-end;
+  // border-top: 1px solid $bordaPadrao;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}

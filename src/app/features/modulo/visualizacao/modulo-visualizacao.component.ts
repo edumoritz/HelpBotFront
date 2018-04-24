@@ -1,3 +1,4 @@
+import { IModuloCadastroModal } from './../cadastro/modulo-cadastro-modal.component';
 import { ModalService } from '../../../components/modal/modal.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
@@ -35,10 +36,16 @@ export class ModuloVisualizacaoComponent {
     this.router.navigate([`/app/modulo-cadastro/${modulo.id}`]);
   }
 
-  public criar(): void {
-    //    this.router.navigate([`/app/modulo-cadastro/null`]);
-    this.modalService.addModal<void, void>(ModuloCadastroModalComponent).subscribe(() => {
-      console.log('Fechou');
+  public criar(modulo?: Modulo): void {
+    if (!modulo) {
+      modulo = new Modulo();
+    }
+
+    this.modalService.addModal<IModuloCadastroModal, void>(
+      ModuloCadastroModalComponent,
+      { modulo: modulo }
+    ).subscribe(() => {
+      this.buscarTodos();
     });
   }
 

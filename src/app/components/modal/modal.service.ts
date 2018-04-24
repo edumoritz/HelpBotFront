@@ -99,7 +99,9 @@ export class ModalService {
   ): void {
     this.applicationRef.attachView(component.hostView);
 
-    this.applicationRef.components[0].location.nativeElement.appendChild((component.hostView as any).rootNodes[0]);
+    const body = document.body;
+    body.appendChild((component.hostView as any).rootNodes[0]);
+    // this.applicationRef.components[0].location.nativeElement.appendChild((component.hostView as any).rootNodes[0]);
   }
 
   /**
@@ -119,8 +121,12 @@ export class ModalService {
 
     const instancia = componentRef.instance;
 
-    if (instancia) {
-      instancia.parametros = parametros;
+    if (instancia && parametros) {
+      const properties = Object.getOwnPropertyNames(parametros);
+
+      for (const prop of properties) {
+        instancia[prop] = parametros[prop];
+      }
     }
 
     return componentRef;
