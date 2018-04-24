@@ -6,6 +6,7 @@ import { FuncionalidadeCadastroComponent } from './cadastro/funcionalidade-cadas
 
 import { PageModule } from '../../components/page/page.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FuncionalidadeCadastroModalComponent } from './cadastro/funcionalidade-cadastro-modal.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   declarations: [
     FuncionalidadeVisualizacaoComponent,
-    FuncionalidadeCadastroComponent
+    FuncionalidadeCadastroComponent,
+    FuncionalidadeCadastroModalComponent
+  ],
+  entryComponents: [
+    FuncionalidadeCadastroModalComponent
   ]
 })
 export class FuncionalidadesModule { }

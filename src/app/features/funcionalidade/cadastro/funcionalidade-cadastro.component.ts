@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Funcionalidade } from '../../../models/funcionalidade/funciondalidade.model';
 import { AFuncionalidadeService } from '../../../services-abstract/funcionalidade.service';
 import { ActivatedRoute } from '@angular/router';
+import { faSave, faBan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'help-bot-funcionalidade-cadastro',
@@ -9,7 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FuncionalidadeCadastroComponent {
 
+  public fontAwesomeBan = faBan;
+  public fontAwesomeSave = faSave;
+
   public funcionalidade = new Funcionalidade();
+
+  public opcoes = [
+    {
+      icone: faBan,
+      acao: () => this.cancelar(),
+      cor: 'danger',
+      titulo: 'Cancelar'
+    },
+    {
+      icone: faSave,
+      acao: () => this.salvar(),
+      cor: 'primary',
+      titulo: 'Salvar'
+    }
+  ] as any[];
 
   constructor(
     private funcionalidadeService: AFuncionalidadeService,

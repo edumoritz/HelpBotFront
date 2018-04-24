@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-
-import { faBan } from '@fortawesome/free-solid-svg-icons';
-import { faSave } from '@fortawesome/free-solid-svg-icons';
-
 import { Observable } from 'rxjs/Rx';
 
 import { Modulo } from '../../../models/funcionalidade/modulo.model';
@@ -23,9 +19,6 @@ extends ModalSuperComponent<IModuloCadastroModal, void>
 implements IModuloCadastroModal {
 
   public modulo: Modulo;
-
-  public fontAwesomeBan = faBan;
-  public fontAwesomeSave = faSave;
 
   constructor(
     public modalService: ModalService,
