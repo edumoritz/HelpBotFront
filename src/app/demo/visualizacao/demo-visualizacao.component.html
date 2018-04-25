@@ -1,6 +1,22 @@
-<mat-card *ngFor="let modulo of modulos">
-  {{ modulo.nome }}
-</mat-card>
+<help-bot-page titulo="Demonstração">
+
+  <label>Sua dúvida está em qual parte do sistema?</label>
+
+  <div fxLayout="row wrap">
+    <div fxFlex="25%" *ngFor="let modulo of modulos" class="card-demo">
+      <mat-card>
+        <b>{{ modulo.nome }}</b>
+
+        <mat-divider></mat-divider>
+
+        <div class="card-demo-content">
+          {{ modulo.especificacao }}
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+</help-bot-page>
 
 
 

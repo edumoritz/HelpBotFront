@@ -4,6 +4,9 @@ import { AFuncionalidadeService } from '../../../services-abstract/funcionalidad
 import { Router } from '@angular/router';
 import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { IFuncionalidadeCadastroModal, FuncionalidadeCadastroModalComponent } from '../cadastro/funcionalidade-cadastro-modal.component';
+import { ModalService } from '../../../components/modal/modal.service';
+import { FuncionalidadeCadastroComponent } from '../cadastro/funcionalidade-cadastro.component';
 
 
 @Component({
@@ -20,7 +23,8 @@ export class FuncionalidadeVisualizacaoComponent {
 
   constructor(
     private funcionalidadeService: AFuncionalidadeService,
-    private router: Router
+    private router: Router,
+    private modalService: ModalService
   ) {
     this.buscarTodos();
    }
@@ -29,8 +33,17 @@ export class FuncionalidadeVisualizacaoComponent {
      this.router.navigate([`/app/funcionalidade-cadastro/${funcionalidade.id}`]);
    }
 
-   public criar(): void {
-    this.router.navigate([`/app/funcionalidade-cadastro/null`]);
+   public criar(funcionalidade?: Funcionalidade): void {
+    if (!funcionalidade) {
+      funcionalidade = new Funcionalidade();
+    }
+
+    this.modalService.addModal<IFuncionalidadeCadastroModal, void>(
+      FuncionalidadeCadastroModalComponent,
+      { funcionalidade: funcionalidade }
+    ).subscribe(() => {
+      this.buscarTodos();
+    });
   }
 
   public remover(func: Funcionalidade): void {

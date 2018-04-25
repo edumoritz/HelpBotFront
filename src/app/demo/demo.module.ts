@@ -6,13 +6,18 @@ import { MatCardModule } from '@angular/material/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageModule } from '../components/page/page.module';
 
+import { FlexModule } from '@angular/flex-layout';
+import { MatDividerModule } from '@angular/material/divider';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     FontAwesomeModule,
     PageModule,
-    MatCardModule
+    MatCardModule,
+    FlexModule,
+    MatDividerModule
   ],
   declarations: [
     DemoVisualizacaoComponent

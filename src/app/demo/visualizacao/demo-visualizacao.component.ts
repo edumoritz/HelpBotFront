@@ -12,7 +12,8 @@ import { Paginacao } from '../../models/paginacao/paginacao.model';
 
 @Component({
   selector: 'help-bot-demo-visualizacao',
-  templateUrl: './demo-visualizacao.component.html'
+  templateUrl: './demo-visualizacao.component.html',
+  styleUrls: ['./demo-visualizacao.component.scss']
 })
 export class DemoVisualizacaoComponent {
   public fontAwesomePencil = faPencilAlt;

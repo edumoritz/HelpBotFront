@@ -1,0 +1,18 @@
+.card-demo {
+  margin-bottom: 5px;
+  padding-right: 5px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card-demo:hover {
+  transform: scale(1.05);
+}
+
+.mat-card {
+  padding: 10px;
+}
+
+.card-demo-content {
+  padding-top: 8px;
+}

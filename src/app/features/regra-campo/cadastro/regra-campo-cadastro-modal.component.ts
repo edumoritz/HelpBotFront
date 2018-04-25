@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
-import { Modulo } from '../../../models/funcionalidade/modulo.model';
 import { ModalSuperComponent } from '../../../components/modal/modal-super.component';
 import { ModalService } from '../../../components/modal/modal.service';
 import { AModuleService } from '../../../services-abstract/modulo.service';
+import { RegraCampo } from '../../../models/funcionalidade/regra-campo.model';
 
-export interface IModuloCadastroModal {
-  modulo: Modulo;
+
+export interface IRegraCampoCadastroModal {
+  regraCampo: RegraCampo;
 }
 
 @Component({
-  selector: 'help-bot-modulo-cadastro-modal',
-  templateUrl: './modulo-cadastro-modal.component.html'
+  selector: 'help-bot-regra-campo-cadastro-modal',
+  templateUrl: './regra-campo-cadastro-modal.component.html'
 })
-export class ModuloCadastroModalComponent
-extends ModalSuperComponent<IModuloCadastroModal, void>
-implements IModuloCadastroModal {
+export class RegraCampoCadastroModalComponent
+extends ModalSuperComponent<IRegraCampoCadastroModal, void>
+implements IRegraCampoCadastroModal {
 
-  public modulo: Modulo;
+  public regraCampo: RegraCampo;
 
   constructor(
     public modalService: ModalService,
@@ -32,12 +33,12 @@ implements IModuloCadastroModal {
   }
 
   public salvar(): void {
-    let acao: Observable<Modulo>;
+    let acao: Observable<RegraCampo>;
 
-    if (this.modulo.id) {
-      acao = this.moduleService.put(this.modulo);
+    if (this.regraCampo.id) {
+      acao = this.moduleService.put(this.regraCampo);
     } else {
-      acao = this.moduleService.post(this.modulo);
+      acao = this.moduleService.post(this.regraCampo);
     }
 
     acao.subscribe(() => this.modalService.fecharModal(this));
