@@ -10,6 +10,7 @@ import { CampoCadastroModalComponent } from './cadastro/campo-cadastro-modal.com
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ModalModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     CampoVisualizacaoComponent,
