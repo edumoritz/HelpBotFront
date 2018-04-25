@@ -18,7 +18,7 @@ import { FuncionalidadeService } from '../services/funcionalidade.service';
 import { FuncionalidadeTestService } from '../test/service/funcionalidade-test.service';
 import { AFuncionalidadeService } from '../services-abstract/funcionalidade.service';
 
-const SERVER_MODE = false;
+const SERVER_MODE = true;
 
 type ProviderType = TypeProvider |
 ValueProvider |
