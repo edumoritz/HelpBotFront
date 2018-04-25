@@ -53,45 +53,6 @@ html, body {
   transform: scale(1.2);
 }
 
-.my-button-table {
-  width: 8%;
-}
-
-@media only screen and (max-width: 1080px) {
-  /* For mobile phones: */
-  .my-button-table {
-    width: 10%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .my-button-table {
-    width: 15%;
-  }
-}
-
-@media only screen and (max-width: 560px) {
-  /* For mobile phones: */
-  .my-button-table {
-    width: 20%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  /* For mobile phones: */
-  .my-button-table {
-    width: 30%;
-  }
-}
-
-@media only screen and (max-width: 240px) {
-  /* For mobile phones: */
-  .my-button-table {
-    width: 40%;
-  }
-}
-
 .my-fex-center {
   display: flex;
   justify-content: center;

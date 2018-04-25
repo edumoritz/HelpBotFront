@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { Campo } from '../../../models/funcionalidade/campo.model';
 import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { ModalService } from '../../../components/modal/modal.service';
+import { ModuloCadastroModalComponent } from '../../modulo/cadastro/modulo-cadastro-modal.component';
+import { ICampoCadastroModal, CampoCadastroModalComponent } from '../cadastro/campo-cadastro-modal.component';
 
 @Component({
   selector: 'help-bot-campo-visualizacao',
@@ -20,7 +23,8 @@ export class CampoVisualizacaoComponent {
   constructor(
 
     private campoService: ACampoService,
-    private router: Router
+    private router: Router,
+    private modalService: ModalService
 
   ) {
 
@@ -31,8 +35,17 @@ export class CampoVisualizacaoComponent {
     this.router.navigate([`/app/campo-cadastro/${campo.id}`]);
   }
 
-  public criar(): void {
-    this.router.navigate([`/app/campo-cadastro/null`]);
+  public criar(campo?: Campo): void {
+    if (!campo) {
+      campo = new Campo();
+    }
+
+    this.modalService.addModal<ICampoCadastroModal, void>(
+      CampoCadastroModalComponent,
+      { campo: campo }
+    ).subscribe(() => {
+      this.buscarTodos();
+    });
   }
 
   public remover(campo: Campo): void {

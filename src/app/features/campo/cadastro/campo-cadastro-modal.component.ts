@@ -5,24 +5,26 @@ import { Modulo } from '../../../models/funcionalidade/modulo.model';
 import { ModalSuperComponent } from '../../../components/modal/modal-super.component';
 import { ModalService } from '../../../components/modal/modal.service';
 import { AModuleService } from '../../../services-abstract/modulo.service';
+import { Campo } from '../../../models/funcionalidade/campo.model';
+import { ACampoService } from '../../../services-abstract/campo.service';
 
-export interface IModuloCadastroModal {
-  modulo: Modulo;
+export interface ICampoCadastroModal {
+  campo: Campo;
 }
 
 @Component({
-  selector: 'help-bot-modulo-cadastro-modal',
-  templateUrl: './modulo-cadastro-modal.component.html'
+  selector: 'help-bot-campo-cadastro-modal',
+  templateUrl: './campo-cadastro-modal.component.html'
 })
-export class ModuloCadastroModalComponent
-extends ModalSuperComponent<IModuloCadastroModal, void>
-implements IModuloCadastroModal {
+export class CampoCadastroModalComponent
+extends ModalSuperComponent<ICampoCadastroModal, void>
+implements ICampoCadastroModal {
 
-  public modulo: Modulo;
+  public campo: Campo;
 
   constructor(
     public modalService: ModalService,
-    private moduleService: AModuleService
+    private campoService: ACampoService
   ) {
     super(modalService);
   }
@@ -32,12 +34,12 @@ implements IModuloCadastroModal {
   }
 
   public salvar(): void {
-    let acao: Observable<Modulo>;
+    let acao: Observable<Campo>;
 
-    if (this.modulo.id) {
-      acao = this.moduleService.put(this.modulo);
+    if (this.campo.id) {
+      acao = this.campoService.put(this.campo);
     } else {
-      acao = this.moduleService.post(this.modulo);
+      acao = this.campoService.post(this.campo);
     }
 
     acao.subscribe(() => this.modalService.fecharModal(this));
