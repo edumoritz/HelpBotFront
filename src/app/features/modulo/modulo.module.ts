@@ -10,6 +10,8 @@ import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
 import { PageModule } from '../../components/page/page.module';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     PageModule,
     FontAwesomeModule,
-    ModalModule
+    ModalModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   declarations: [
     ModuloVisualizacaoComponent,

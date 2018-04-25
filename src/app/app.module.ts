@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { TypeProvider } from '@angular/core';
 import { ValueProvider } from '@angular/core';
@@ -29,6 +30,7 @@ import { DemoModule } from './demo/demo.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     LoginModule,
     RouterModule.forRoot(APP_ROUTES),
