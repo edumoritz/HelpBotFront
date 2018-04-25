@@ -1,0 +1,55 @@
+<help-bot-page titulo="RegraCampo">
+
+  <fa-icon
+  [icon]="fontAwesomePlusCircle"
+  class="my-success-color my-icon-font"
+  (click)="criar()"
+  size="lg"
+  title="Adicionar uma nova Funcionalidade"
+  >
+  </fa-icon>
+
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let func of funcionalidades">
+        <td>
+          <fa-icon
+            [icon]="fontAwesomeTimeCircle"
+            class="my-danger-color my-icon-font"
+            (click)="remover(func)"
+            size="lg"
+            title="Remover essa Funcionalidade"
+          >
+        </fa-icon>
+          <div class="btn-group">
+            <fa-icon
+              [icon]="fontAwesomePencil"
+              class="my-primary-color my-icon-font"
+              (click)="editar(func)"
+              size="lg"
+              title="Editar essa Funcionalidade"
+              
+              >
+            </fa-icon>
+          </div>
+        </td>
+        <td>
+          <label [title]="func.especificacao">
+            {{ func.nome }}
+          </label>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</help-bot-page>
+
