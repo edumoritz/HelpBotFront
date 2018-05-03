@@ -22,7 +22,7 @@ export class LoginService {
     return new Observable<boolean>((observador) => {
       const authFactory = new AuthFactory();
 
-      authFactory.setUsername(username).setPassword('codigoUsuario=1&password=' + password);
+      authFactory.setUsername(username).setPassword(password);
 
       const head = new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded',
