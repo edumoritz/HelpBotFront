@@ -8,9 +8,6 @@ import { UserControllerService } from './user-controller.service';
 import { FormValidatorDirective } from './form-validator.directive';
 import { FormFieldValidatorDirective } from './form-field-validator.directive';
 
-import { ExclusaoComponent } from './exclusao.component';
-import { ExclusaoService } from './exclusao.service';
-
 import { LoginService } from './login.service';
 
 @NgModule({
@@ -18,11 +15,9 @@ import { LoginService } from './login.service';
   ],
   declarations: [
     FormValidatorDirective,
-    FormFieldValidatorDirective,
-    ExclusaoComponent
+    FormFieldValidatorDirective
   ],
   entryComponents: [
-    ExclusaoComponent
   ],
   exports: [
     FormValidatorDirective,
@@ -37,7 +32,6 @@ export class CoreModule {
         TokenService,
         LoginEventService,
         UserControllerService,
-        ExclusaoService,
         LoginService
       ]
     };

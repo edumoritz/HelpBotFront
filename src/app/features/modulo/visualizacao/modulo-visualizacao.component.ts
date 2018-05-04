@@ -25,15 +25,7 @@ export class ModuloVisualizacaoComponent {
 
   public modulos = [] as Modulo[];
 
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-  
+  public paginacao = new Paginacao();
   
   constructor(
     private moduleService: AModuleService,
@@ -43,11 +35,7 @@ export class ModuloVisualizacaoComponent {
     this.buscarTodos();
   }
 
-  public editar(modulo: Modulo): void {
-    this.router.navigate([`/app/modulo-cadastro/${modulo.id}`]);
-  }
-
-  public criar(modulo?: Modulo): void {
+  public entityEvent(modulo?: Modulo): void {
     if (!modulo) {
       modulo = new Modulo();
     }
@@ -65,13 +53,9 @@ export class ModuloVisualizacaoComponent {
   }
 
   private buscarTodos(): void {
-    const paginacao = new Paginacao();
-    paginacao.page = 0;
-    paginacao.itensPerPage = 20;
-
-    this.moduleService.getAll(paginacao).subscribe((response) => {
+    this.moduleService.getAll(this.paginacao).subscribe((response) => {
       this.modulos = response.itens;
-      paginacao.totalItens = response.qtdItens;
+      this.paginacao.totalItens = response.qtdItens;
     });
   }
 
