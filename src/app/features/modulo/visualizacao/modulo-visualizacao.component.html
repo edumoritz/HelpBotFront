@@ -3,7 +3,7 @@
   <fa-icon
     [icon]="fontAwesomePlusCircle"
     class="my-success-color my-icon-font"
-    (click)="criar()"
+    (click)="entityEvent()"
     size="lg"
     title="Adicionar um novo Módulo"
     >
@@ -25,7 +25,7 @@
             <fa-icon
               [icon]="fontAwesomePencil"
               class="my-primary-color my-icon-font"
-              (click)="editar(modulo)"
+              (click)="entityEvent(modulo)"
               size="lg"
               title="Editar esse Módulo"
               >
