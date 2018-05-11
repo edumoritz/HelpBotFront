@@ -12,6 +12,8 @@ import { PageModule } from '../../components/page/page.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule, MatFormFieldModule, MatAutocompleteModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -21,7 +23,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FontAwesomeModule,
     ModalModule,
     MatTableModule,
-    MatPaginatorModule
+    MatAutocompleteModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     ModuloVisualizacaoComponent,
