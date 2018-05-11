@@ -11,6 +11,10 @@ export interface IFuncionalidadeCadastroModal {
   funcionalidade: Funcionalidade;
 }
 
+export class State {
+  constructor(public name: string, public population: string, public flag: string) { }
+}
+
 @Component({
   selector: 'help-bot-funcionalidade-cadastro-modal',
   templateUrl: './funcionalidade-cadastro-modal.component.html'

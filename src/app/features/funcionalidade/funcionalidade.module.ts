@@ -7,13 +7,21 @@ import { FuncionalidadeCadastroComponent } from './cadastro/funcionalidade-cadas
 import { PageModule } from '../../components/page/page.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FuncionalidadeCadastroModalComponent } from './cadastro/funcionalidade-cadastro-modal.component';
+import { ModalModule } from '../../components/modal/modal.module';
+import { MatAutocompleteModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     PageModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ModalModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     FuncionalidadeVisualizacaoComponent,
