@@ -1,15 +1,15 @@
 <help-bot-page titulo="RegraCampo">
 
   <fa-icon
-  [icon]="fontAwesomePlusCircle"
-  class="my-success-color my-icon-font"
-  (click)="criar()"
-  size="lg"
-  title="Adicionar uma nova Funcionalidade"
-  >
+    [icon]="fontAwesomePlusCircle"
+    class="my-success-color my-icon-font"
+    (click)="entityEvent()"
+    size="lg"
+    title="Adicionar um novo Módulo"
+    >
   </fa-icon>
 
-  <table class="table table-striped">
+  <table class="table table-bordered table-striped">
 
     <thead>
       <tr>
@@ -19,32 +19,27 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let func of funcionalidades">
+      <tr *ngFor="let regra of RegraCampo">
         <td>
-          <fa-icon
-            [icon]="fontAwesomeTimeCircle"
-            class="my-danger-color my-icon-font"
-            (click)="remover(func)"
-            size="lg"
-            title="Remover essa Funcionalidade"
-          >
-        </fa-icon>
           <div class="btn-group">
             <fa-icon
               [icon]="fontAwesomePencil"
               class="my-primary-color my-icon-font"
-              (click)="editar(func)"
+              (click)="entityEvent(regra)"
               size="lg"
-              title="Editar essa Funcionalidade"
-              
+              title="Editar esse Módulo"
+              >
+            </fa-icon>
+
+            <fa-icon
+              [icon]="fontAwesomeTimeCircle"
+              class="my-danger-color my-icon-font"
+              (click)="remover(regra)"
+              size="lg"
+              title="Remover esse Módulo"
               >
             </fa-icon>
           </div>
-        </td>
-        <td>
-          <label [title]="func.especificacao">
-            {{ func.nome }}
-          </label>
         </td>
       </tr>
     </tbody>
