@@ -8,9 +8,10 @@ import { PageModule } from '../../components/page/page.module';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegraCampoCadastroComponent } from './cadastro/regra-campo-cadastro.component';
-import { MatPaginatorModule, MatTableModule } from '@angular/material';
+import { MatPaginatorModule, MatTableModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule } from '@angular/material';
 import { ModalModule } from '../../components/modal/modal.module';
 import { RegraCampoCadastroModalComponent } from './cadastro/regra-campo-cadastro-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -20,7 +21,11 @@ import { RegraCampoCadastroModalComponent } from './cadastro/regra-campo-cadastr
     FontAwesomeModule,
     ModalModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     RegraCampoVisualizacaoComponent,

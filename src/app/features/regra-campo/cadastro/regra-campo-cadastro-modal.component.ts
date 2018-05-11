@@ -11,6 +11,10 @@ export interface IRegraCampoCadastroModal {
   regraCampo: RegraCampo;
 }
 
+export class State {
+  constructor(public name: string, public population: string, public flag: string) { }
+}
+
 @Component({
   selector: 'help-bot-regra-campo-cadastro-modal',
   templateUrl: './regra-campo-cadastro-modal.component.html'
@@ -18,6 +22,8 @@ export interface IRegraCampoCadastroModal {
 export class RegraCampoCadastroModalComponent
 extends ModalSuperComponent<IRegraCampoCadastroModal, void>
 implements IRegraCampoCadastroModal {
+  
+  filteredStates: Observable<any[]>;
 
   public regraCampo: RegraCampo;
 
