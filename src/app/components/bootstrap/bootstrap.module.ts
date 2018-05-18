@@ -11,10 +11,4 @@ export class BootStrapModule {
       PaginationModule.forRoot()
     ];
   }
-
-  constructor(
-    private paginationConfig: PaginationConfig
-  ) {
-    console.log(this.paginationConfig);
-  }
 }

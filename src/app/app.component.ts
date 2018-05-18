@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { PaginationConfig } from 'ngx-bootstrap/pagination';
+
 import { UserControllerService } from './core/user-controller.service';
 
 import { LoginEventService } from './core/login-event.service';
@@ -14,8 +17,10 @@ export class AppComponent {
   constructor(
     private loginEventService: LoginEventService,
     private router: Router,
-    private userControllerService: UserControllerService
+    private userControllerService: UserControllerService,
+    private paginationConfig: PaginationConfig
   ) {
+    this.configureBootstrap();
 
     // if (!this.websocketService.isConected()) {
     //   this.websocketService.connect();
@@ -44,6 +49,16 @@ export class AppComponent {
       }
 
     });
+  }
+
+  private configureBootstrap(): void {
+    this.paginationConfig.main.nextText = '>';
+    this.paginationConfig.main.previousText = '<';
+    this.paginationConfig.main.maxSize = 4;
+    this.paginationConfig.main.boundaryLinks = true;
+    this.paginationConfig.main.lastText = '>>';
+    this.paginationConfig.main.firstText = '<<';
+    this.paginationConfig.main.itemsPerPage = 20;
   }
 
 }

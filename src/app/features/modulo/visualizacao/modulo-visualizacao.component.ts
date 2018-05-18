@@ -6,6 +6,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { MatTableDataSource } from '@angular/material/table';
+import { PaginationConfig } from 'ngx-bootstrap/pagination';
 
 import { IModuloCadastroModal } from '../cadastro/modulo-cadastro-modal.component';
 import { ModalService } from '../../../components/modal/modal.service';
@@ -33,10 +34,12 @@ export class ModuloVisualizacaoComponent {
   constructor(
     private moduleService: AModuleService,
     private router: Router,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private paginationConfig: PaginationConfig
   ) {
     this.paginacao.itensPerPage = 2;
     this.buscarTodos();
+    console.log(this.paginationConfig);
   }
 
   public entityEvent(modulo?: Modulo): void {

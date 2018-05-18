@@ -16,6 +16,16 @@ export class ModuleTestService implements AModuleService {
     this.post({ nome: '456' }).subscribe();
     this.post({ nome: '789' }).subscribe();
     this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'dsf' }).subscribe();
   }
 
   public post(modulo: Modulo): Observable<Modulo> {

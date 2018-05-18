@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ModuloCadastroModalComponent } from './cadastro/modulo-cadastro-modal.component';
@@ -13,9 +15,6 @@ import { ModuloVisualizacaoComponent } from './visualizacao/modulo-visualizacao.
 import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
 import { PageModule } from '../../components/page/page.module';
 import { ModalModule } from '../../components/modal/modal.module';
-
-import { PaginationModule } from 'ngx-bootstrap/pagination';
-
 
 @NgModule({
   imports: [
