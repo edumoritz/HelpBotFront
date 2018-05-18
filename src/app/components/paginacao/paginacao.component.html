@@ -1,0 +1,15 @@
+<div>
+
+  <div class="itens">
+    <div
+      *ngFor="let page of pages"
+      class="item"
+      [class.item-selected]="(page.value && page.selectable) ? (page.value - 1 === pageValue) : false"
+      [class.item-not-selecteble]="!page.selectable"
+      (click)="changePage(page)"
+      >
+      {{ page.description }}
+    </div>
+  </div>
+
+</div>

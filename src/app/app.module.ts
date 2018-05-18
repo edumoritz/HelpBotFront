@@ -24,6 +24,8 @@ import { HomeModule } from './home/home.module';
 import { demoRoute } from './demo/demo.routing';
 import { DemoModule } from './demo/demo.module';
 
+import { BootStrapModule } from './components/bootstrap/bootstrap.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -37,7 +39,8 @@ import { DemoModule } from './demo/demo.module';
     CoreModule.forRoot(),
     HomeModule,
     FeaturesModule,
-    DemoModule
+    DemoModule,
+    BootStrapModule.forRoot()
   ],
   providers: [
     {

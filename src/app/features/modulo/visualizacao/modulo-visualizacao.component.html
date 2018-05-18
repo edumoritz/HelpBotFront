@@ -1,56 +1,55 @@
 <help-bot-page titulo="Modulos">
-  
-  <fa-icon
-    [icon]="fontAwesomePlusCircle"
-    class="my-success-color my-icon-font"
-    (click)="entityEvent()"
-    size="lg"
-    title="Adicionar um novo Módulo"
+
+  <div class="separacao-itens">
+    <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent()">
+      <fa-icon
+        [icon]="fontAwesomePlusCircle"
+        title="Adicionar um novo Módulo"
+        >
+      </fa-icon>
+    </button>
+  </div>
+
+  <mat-table #table [dataSource]="dataSourceTable" class="separacao-itens">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="#">
+      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+      <mat-cell *matCellDef="let modulo">
+        <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent(modulo)">
+          <fa-icon
+            [icon]="fontAwesomePencil"
+            title="Editar esse Módulo"
+            >
+          </fa-icon>
+        </button>
+        <button mat-raised-button color="warn" class="mini-button" (click)="remover(modulo)">
+          <fa-icon
+            [icon]="fontAwesomeTimeCircle"
+            title="Remover esse Módulo"
+            >
+          </fa-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let modulo">{{ modulo.nome }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['#', 'nome']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['#', 'nome'];"></mat-row>
+  </mat-table>
+
+  <pagination
+    [totalItems]="paginacao.totalItens"
+    [ngModel]="paginacao.page + 1"
+    (ngModelChange)="onChangePage($event)"
+    [itemsPerPage]="paginacao.itensPerPage"
     >
-  </fa-icon>
-
-  <table class="table table-bordered table-striped">    
-    
-    <thead>
-      <tr>
-        <th></th>
-        <th>Nome</th>
-      </tr>
-    </thead>
-    
-
-    <tbody>
-      <tr *ngFor="let modulo of modulos">
-        <td>
-          <div class="btn-group">
-            <fa-icon
-              [icon]="fontAwesomePencil"
-              class="my-primary-color my-icon-font"
-              (click)="entityEvent(modulo)"
-              size="lg"
-              title="Editar esse Módulo"
-              >
-            </fa-icon>
-
-            <fa-icon
-              [icon]="fontAwesomeTimeCircle"
-              class="my-danger-color my-icon-font"
-              (click)="remover(modulo)"
-              size="lg"
-              title="Remover esse Módulo"
-              >
-            </fa-icon>
-          </div>
-        </td>
-        <td>
-          <label [title]="modulo.especificacao">
-            {{ modulo.nome }}
-          </label>
-        </td>
-      </tr>
-    </tbody>
-
-  </table>
+  </pagination>
 
 </help-bot-page>
 

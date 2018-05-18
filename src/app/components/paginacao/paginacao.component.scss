@@ -1,0 +1,50 @@
+$borda: 1px solid #aaaaaa;
+$borda-radius: 4px;
+
+.itens {
+  display: flex;
+}
+
+.item {
+  padding: 8px;
+  background-color: #f6f6f6;
+  cursor: pointer;
+  border-bottom: $borda;
+  border-top: $borda;
+}
+
+.item:hover {
+  background-color: #a6e1e9;
+  transform: scale(1.05);
+}
+
+.item-selected {
+  background-color: #0043fc;
+  color: #f6f6f6;
+}
+
+.item-selected:hover {
+  background-color: #4300fa;
+}
+
+.item-not-selecteble {
+  background-color: #f6f6f6 !important;
+  transform: none !important;
+  cursor: default !important;
+}
+
+.item:not(:last-child) {
+  border-right: $borda;
+}
+
+.item:first-child {
+  border-left: $borda;
+  border-top-left-radius: $borda-radius;
+  border-bottom-left-radius: $borda-radius;
+}
+
+.item:last-child {
+  border-right: $borda;
+  border-top-right-radius: $borda-radius;
+  border-bottom-right-radius: $borda-radius;
+}
