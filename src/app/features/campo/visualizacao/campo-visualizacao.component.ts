@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { ACampoService } from '../../../services-abstract/campo.service';
 import { Router } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
+
+import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { ACampoService } from '../../../services-abstract/campo.service';
 import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { Campo } from '../../../models/funcionalidade/campo.model';
-import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { ModalService } from '../../../components/modal/modal.service';
 import { ModuloCadastroModalComponent } from '../../modulo/cadastro/modulo-cadastro-modal.component';
 import { ICampoCadastroModal, CampoCadastroModalComponent } from '../cadastro/campo-cadastro-modal.component';
@@ -19,6 +21,10 @@ export class CampoVisualizacaoComponent {
   public fontAwesomeTimeCircle = faTimesCircle;
 
   public campos = [] as Campo[];
+  
+  public paginacao = new Paginacao();
+
+  public dataSourceTable = new MatTableDataSource<Modulo>([]);
 
   constructor(
 
@@ -64,4 +70,3 @@ export class CampoVisualizacaoComponent {
     });
   }
 }
-
