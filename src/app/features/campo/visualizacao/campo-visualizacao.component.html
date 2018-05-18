@@ -1,5 +1,56 @@
 <help-bot-page titulo="Campos"> 
   
+  <div class="separacao-itens">
+    <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent()">
+      <fa-icon
+        [icon]="fontAwesomePlusCircle"
+        title="Adicionar um novo Campo"
+        >
+      </fa-icon>
+    </button>
+  </div>
+
+  <mat-table #table [dataSource]="dataSourceTable" class="separacao-itens">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="#">
+      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+      <mat-cell *matCellDef="let campo">
+        <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent(campo)">
+          <fa-icon
+            [icon]="fontAwesomePencil"
+            title="Editar esse Campo"
+            >
+          </fa-icon>
+        </button>
+        <button mat-raised-button color="warn" class="mini-button" (click)="remover(campo)">
+          <fa-icon
+            [icon]="fontAwesomeTimeCircle"
+            title="Remover esse Campo"
+            >
+          </fa-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let campo">{{ campo.nome }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['#', 'nome']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['#', 'nome'];"></mat-row>
+  </mat-table>
+
+    <pagination
+      [totalItems]="paginacao.totalItens"
+      [ngModel]="paginacao.page + 1"
+      (ngModelChange)="onChangePage($event)"
+      [itemsPerPage]="paginacao.itensPerPage"
+      >
+    </pagination>
+<!--
   <fa-icon
   [icon]="fontAwesomePlusCircle"
   class="my-success-color my-icon-font"
@@ -39,5 +90,7 @@
   </tbody>
 
 </table>
+
+-->
 
 </help-bot-page>

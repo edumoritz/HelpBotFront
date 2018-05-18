@@ -12,6 +12,7 @@ import { MatPaginatorModule, MatTableModule, MatFormFieldModule, MatInputModule,
 import { ModalModule } from '../../components/modal/modal.module';
 import { RegraCampoCadastroModalComponent } from './cadastro/regra-campo-cadastro-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
+    PaginationModule,
     BrowserAnimationsModule
   ],
   declarations: [
