@@ -10,6 +10,14 @@ export class CampoTestService implements ACampoService {
   private readonly listaCampos = new Map<number, Campo>();
   private idPadrao = 1;
 
+  constructor() {
+    this.post({ nome: 'Jonastan' }).subscribe();
+    this.post({ nome: 'Potato' }).subscribe();
+    this.post({ nome: 'Dung' }).subscribe();
+    this.post({ nome: 'Trash' }).subscribe();
+    this.post({ nome: 'Loose' }).subscribe();
+  }
+
   public post(campo: Campo): Observable<Campo> {
     return new Observable((observer) => {
       if (campo.id) {
