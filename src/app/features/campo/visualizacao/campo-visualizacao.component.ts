@@ -21,10 +21,10 @@ export class CampoVisualizacaoComponent {
   public fontAwesomeTimeCircle = faTimesCircle;
 
   public campos = [] as Campo[];
-  
+
   public paginacao = new Paginacao();
 
-  public dataSourceTable = new MatTableDataSource<Modulo>([]);
+  // public dataSourceTable = new MatTableDataSource<Modulo>([]);
 
   constructor(
 
