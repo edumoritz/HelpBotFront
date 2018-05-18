@@ -8,8 +8,9 @@ import { PageModule } from '../../components/page/page.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FuncionalidadeCadastroModalComponent } from './cadastro/funcionalidade-cadastro-modal.component';
 import { ModalModule } from '../../components/modal/modal.module';
-import { MatAutocompleteModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { MatAutocompleteModule, MatInputModule, MatFormFieldModule, MatTableModule, MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   imports: [
@@ -21,7 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    PaginationModule,
+    MatButtonModule
   ],
   declarations: [
     FuncionalidadeVisualizacaoComponent,

@@ -1,54 +1,54 @@
 <help-bot-page titulo="Funcionalidades">
 
-  <fa-icon
-  [icon]="fontAwesomePlusCircle"
-  class="my-success-color my-icon-font"
-  (click)="criar()"
-  size="lg"
-  title="Adicionar uma nova Funcionalidade."
-  >
-  </fa-icon>
+  <div class="separacao-itens">
+    <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent()">
+      <fa-icon
+        [icon]="fontAwesomePlusCircle"
+        title="Adicionar uma nova Funcionalidade"
+        >
+      </fa-icon>
+    </button>
+  </div>
 
-  <table class="table table-bordered table-striped">
+  <mat-table #table [dataSource]="dataSourceTable" class="separacao-itens">
 
-    <thead>
-      <tr>
-        <th class="text-center">#</th>
-        <th>Nome</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let func of funcionalidades">
-        <td>
+    <!-- Position Column -->
+    <ng-container matColumnDef="#">
+      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+      <mat-cell *matCellDef="let func">
+        <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent(func)">
+          <fa-icon
+            [icon]="fontAwesomePencil"
+            title="Editar essa Funcionalidade"
+            >
+          </fa-icon>
+        </button>
+        <button mat-raised-button color="warn" class="mini-button" (click)="remover(func)">
           <fa-icon
             [icon]="fontAwesomeTimeCircle"
-            class="my-danger-color my-icon-font"
-            (click)="remover(func)"
-            size="lg"
             title="Remover essa Funcionalidade"
-          >
-        </fa-icon>
-          <div class="btn-group">
-            <fa-icon
-              [icon]="fontAwesomePencil"
-              class="my-primary-color my-icon-font"
-              (click)="editar(func)"
-              size="lg"
-              title="Editar essa Funcionalidade"
+            >
+          </fa-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
 
-              >
-            </fa-icon>
-          </div>
-        </td>
-        <td>
-          <label [title]="func.especificacao">
-            {{ func.nome }}
-          </label>
-        </td>
-      </tr>
-    </tbody>
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let func">{{ func.nome }}</mat-cell>
+    </ng-container>
 
-  </table>
+    <mat-header-row *matHeaderRowDef="['#', 'nome']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['#', 'nome'];"></mat-row>
+  </mat-table>
+
+  <pagination
+    [totalItems]="paginacao.totalItens"
+    [ngModel]="paginacao.page + 1"
+    (ngModelChange)="onChangePage($event)"
+    [itemsPerPage]="paginacao.itensPerPage"
+    >
+  </pagination>
 
 </help-bot-page>

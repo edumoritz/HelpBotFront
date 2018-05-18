@@ -7,6 +7,7 @@ import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-soli
 import { IFuncionalidadeCadastroModal, FuncionalidadeCadastroModalComponent } from '../cadastro/funcionalidade-cadastro-modal.component';
 import { ModalService } from '../../../components/modal/modal.service';
 import { FuncionalidadeCadastroComponent } from '../cadastro/funcionalidade-cadastro.component';
+import { MatTableDataSource } from '@angular/material';
 
 
 @Component({
@@ -19,21 +20,21 @@ export class FuncionalidadeVisualizacaoComponent {
   public fontAwesomePlusCircle = faPlusCircle;
   public fontAwesomeTimeCircle = faTimesCircle;
 
-  public funcionalidades = [] as Funcionalidade[];
+  public paginacao = new Paginacao();
+
+  public dataSourceTable = new MatTableDataSource<Funcionalidade>([]);
+
 
   constructor(
     private funcionalidadeService: AFuncionalidadeService,
     private router: Router,
     private modalService: ModalService
   ) {
+    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 
-   public editar(funcionalidade: Funcionalidade): void {
-     this.router.navigate([`/app/funcionalidade-cadastro/${funcionalidade.id}`]);
-   }
-
-   public criar(funcionalidade?: Funcionalidade): void {
+   public entityEvent(funcionalidade?: Funcionalidade): void {
     if (!funcionalidade) {
       funcionalidade = new Funcionalidade();
     }
@@ -49,6 +50,11 @@ export class FuncionalidadeVisualizacaoComponent {
   public remover(func: Funcionalidade): void {
     this.funcionalidadeService.delete(func.id).subscribe(() => this.buscarTodos());
   }
+  
+  public onChangePage(page: number): void {
+    this.paginacao.page = page - 1;
+    this.buscarTodos();
+  }
 
   public buscarTodos(): void {
     const paginacao = new Paginacao();
@@ -56,7 +62,8 @@ export class FuncionalidadeVisualizacaoComponent {
     paginacao.itensPerPage = 20;
 
     this.funcionalidadeService.getAll(paginacao).subscribe((response) => {
-      this.funcionalidades = response.itens;
+      this.paginacao.totalItens = response.qtdItens;
+      this.dataSourceTable.data = response.itens;
       paginacao.totalItens = response.qtdItens;
     });
   }
