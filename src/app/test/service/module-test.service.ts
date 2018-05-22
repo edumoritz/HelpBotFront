@@ -11,21 +11,11 @@ export class ModuleTestService implements AModuleService {
   private idPadrao = 1;
 
   constructor() {
-    this.post({ nome: 'aaa' }).subscribe();
-    this.post({ nome: '123' }).subscribe();
-    this.post({ nome: '456' }).subscribe();
-    this.post({ nome: '789' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
-    this.post({ nome: 'dsf' }).subscribe();
+    this.post({ nome: 'Teste Module' }).subscribe();
+    this.post({ nome: 'Teste Module' }).subscribe();
+    this.post({ nome: 'Teste Module' }).subscribe();
+    this.post({ nome: 'Teste Module' }).subscribe();
+    this.post({ nome: 'Teste Module' }).subscribe();
   }
 
   public post(modulo: Modulo): Observable<Modulo> {

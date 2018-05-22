@@ -10,6 +10,14 @@ export class RegraCampoTestService implements ARegraCampoService {
   private readonly listaCampo = new Map<number, RegraCampo>();
   private idPadrao = 1;
 
+  constructor() {
+    this.post({ nome: 'Teste Regra Campo' }).subscribe();
+    this.post({ nome: 'Teste Regra Campo' }).subscribe();
+    this.post({ nome: 'Teste Regra Campo' }).subscribe();
+    this.post({ nome: 'Teste Regra Campo' }).subscribe();
+    this.post({ nome: 'Teste Regra Campo' }).subscribe();
+  }
+
   public post(campo: RegraCampo): Observable<RegraCampo> {
     return new Observable((observer) => {
       if (campo.id) {

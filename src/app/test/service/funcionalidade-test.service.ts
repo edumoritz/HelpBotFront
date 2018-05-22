@@ -10,6 +10,14 @@ export class FuncionalidadeTestService implements AFuncionalidadeService {
   private readonly listaFuncionalidades = new Map<number, Funcionalidade>();
   private idPadrao = 1;
 
+  constructor() {
+    this.post({ nome: 'Teste Funcionalidade' }).subscribe();
+    this.post({ nome: 'Teste Funcionalidade' }).subscribe();
+    this.post({ nome: 'Teste Funcionalidade' }).subscribe();
+    this.post({ nome: 'Teste Funcionalidade' }).subscribe();
+    this.post({ nome: 'Teste Funcionalidade' }).subscribe();
+  }
+
   public post(func: Funcionalidade): Observable<Funcionalidade> {
     return new Observable((observer) => {
       if (func.id) {

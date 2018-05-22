@@ -14,6 +14,39 @@
         </div>
       </mat-card>
     </div>
+
+    <div fxFlex="25%" *ngFor="let campo of campos" class="card-demo">
+      <mat-card>
+        <b>{{ campo.nome }}</b>
+
+        <mat-divider></mat-divider>
+
+        <div class="card-demo-content">
+          {{ campo.especificacao }}
+        </div>
+      </mat-card>
+    </div>
+
+    <div fxFlex="25%" *ngFor="let regra of regraCampos" class="card-demo">
+      <mat-card>
+        <b>{{ regra.nome }}</b>
+
+        <mat-divider></mat-divider>
+
+      </mat-card>
+    </div>
+
+    <div fxFlex="25%" *ngFor="let func of funcionalidades" class="card-demo">
+      <mat-card>
+        <b>{{ func.nome }}</b>
+
+        <mat-divider></mat-divider>
+
+        <div class="card-demo-content">
+          {{ func.especificacao }}
+        </div>
+      </mat-card>
+    </div>
   </div>
 
 </help-bot-page>
