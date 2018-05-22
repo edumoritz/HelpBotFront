@@ -70,38 +70,4 @@ export class CampoVisualizacaoComponent {
     });
   }
 
-  /*
-  public editar(campo: Campo): void {
-    this.router.navigate([`/app/campo-cadastro/${campo.id}`]);
-  }
-
-  public criar(campo?: Campo): void {
-    if (!campo) {
-      campo = new Campo();
-    }
-
-    this.modalService.addModal<ICampoCadastroModal, void>(
-      CampoCadastroModalComponent,
-      { campo: campo }
-    ).subscribe(() => {
-      this.buscarTodos();
-    });
-  }
-
-  public remover(campo: Campo): void {
-    this.campoService.delete(campo.id).subscribe(() => this.buscarTodos());
-  }
-
-  public buscarTodos(): void {
-    const paginacao = new Paginacao();
-    paginacao.page = 0;
-    paginacao.itensPerPage = 20;
-
-
-    this.campoService.getAll(paginacao).subscribe((response) => {
-      this.campos = response.itens;
-      paginacao.totalItens = response.qtdItens;
-    });
-  }
-  */
 }
