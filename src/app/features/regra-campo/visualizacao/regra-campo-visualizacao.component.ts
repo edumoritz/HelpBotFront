@@ -1,7 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { Paginacao } from '../../../models/paginacao/paginacao.model';
-import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { ARegraCampoService } from '../../../services-abstract/regra-campo.service';
 import { RegraCampo } from '../../../models/funcionalidade/regra-campo.model';
 import { ModalService } from '../../../components/modal/modal.service';
