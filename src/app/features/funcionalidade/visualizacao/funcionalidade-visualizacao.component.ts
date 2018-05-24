@@ -20,6 +20,8 @@ export class FuncionalidadeVisualizacaoComponent {
   public fontAwesomePlusCircle = faPlusCircle;
   public fontAwesomeTimeCircle = faTimesCircle;
 
+  public funcionalidades = [] as Funcionalidade[];
+
   public paginacao = new Paginacao();
 
   public dataSourceTable = new MatTableDataSource<Funcionalidade>([]);
@@ -56,15 +58,11 @@ export class FuncionalidadeVisualizacaoComponent {
     this.buscarTodos();
   }
 
-  public buscarTodos(): void {
-    const paginacao = new Paginacao();
-    paginacao.page = 0;
-    paginacao.itensPerPage = 20;
-
-    this.funcionalidadeService.getAll(paginacao).subscribe((response) => {
-      this.paginacao.totalItens = response.qtdItens;
+  private buscarTodos(): void {
+    this.funcionalidadeService.getAll(this.paginacao).subscribe((response) => {
+      this.funcionalidades = response.itens;
       this.dataSourceTable.data = response.itens;
-      paginacao.totalItens = response.qtdItens;
+      this.paginacao.totalItens = response.qtdItens;
     });
   }
 
