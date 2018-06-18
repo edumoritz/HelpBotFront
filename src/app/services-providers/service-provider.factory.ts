@@ -17,6 +17,9 @@ import { RegraCampoService } from '../services/regra-campo.service';
 import { FuncionalidadeService } from '../services/funcionalidade.service';
 import { FuncionalidadeTestService } from '../test/service/funcionalidade-test.service';
 import { AFuncionalidadeService } from '../services-abstract/funcionalidade.service';
+import { ATutorialService } from '../services-abstract/tutorial.service';
+import { TutorialService } from '../services/tutorial.service';
+import { TutorialTestService } from '../test/service/tutorial-test.service';
 
 const SERVER_MODE = false;
 
@@ -38,5 +41,6 @@ export const providersServices: ProviderType[] = [
   { provide: AModuleService, useClass: getService(ModuleTestService, ModuleService) },
   { provide: ACampoService, useClass: getService(CampoTestService, CampoService) },
   { provide: ARegraCampoService, useClass: getService(RegraCampoTestService, RegraCampoService) },
-  { provide: AFuncionalidadeService, useClass: getService(FuncionalidadeTestService, FuncionalidadeService) }
+  { provide: AFuncionalidadeService, useClass: getService(FuncionalidadeTestService, FuncionalidadeService) },
+  { provide: ATutorialService, useClass: getService(TutorialTestService, TutorialService) }
 ];

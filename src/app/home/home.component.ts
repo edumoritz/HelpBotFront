@@ -79,6 +79,11 @@ export class HomeComponent {
             acao: () => this.router.navigate(['/home/demo-visualizacao']),
             nome: 'Demonstração',
             icon: faCog
+          },
+          {
+            acao: () => this.router.navigate(['/home/tutorial-visualizacao']),
+            nome: 'Tutorial',
+            icon: faCog
           }
         ]
       },
