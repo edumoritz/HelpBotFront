@@ -23,7 +23,8 @@ export const APP_ROUTES: Routes = [
       ...funcionalidadesRoute,
       ...regraCampoRoute,
       ...demoRoute,
-      ...tutorialRoute
+      ...tutorialRoute,
+      ...perguntaRoute
     ]
   },
   { path: '**', redirectTo: '/home' }

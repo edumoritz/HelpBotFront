@@ -20,6 +20,8 @@ import { AFuncionalidadeService } from '../services-abstract/funcionalidade.serv
 import { ATutorialService } from '../services-abstract/tutorial.service';
 import { TutorialService } from '../services/tutorial.service';
 import { TutorialTestService } from '../test/service/tutorial-test.service';
+import { PerguntaFrequente } from '../models/perguntas-frequentes/pergunta-frequente.model';
+import { APerguntaFrequente, APerguntaFrequenteService } from '../services-abstract/pergunta-frequente.service';
 
 const SERVER_MODE = false;
 
@@ -42,5 +44,6 @@ export const providersServices: ProviderType[] = [
   { provide: ACampoService, useClass: getService(CampoTestService, CampoService) },
   { provide: ARegraCampoService, useClass: getService(RegraCampoTestService, RegraCampoService) },
   { provide: AFuncionalidadeService, useClass: getService(FuncionalidadeTestService, FuncionalidadeService) },
-  { provide: ATutorialService, useClass: getService(TutorialTestService, TutorialService) }
+  { provide: ATutorialService, useClass: getService(TutorialTestService, TutorialService) },
+  { provide: APerguntaFrequenteService, useClass: getService(PerguntaFrequenteTestService, PerguntaFrequenteService) }
 ];
