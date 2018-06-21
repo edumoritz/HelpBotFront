@@ -11,6 +11,8 @@ import { ModalModule } from '../../components/modal/modal.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PerguntaFrequenteVisualizacaoComponent } from './visualizacao/pergunta-frequente-visualizacao.component';
+import { PerguntaFrequenteCadastroModalComponent } from './cadastro/pergunta-frequente-cadastro-modal.component';
+import { PerguntaFrequenteCadastroComponent } from './cadastro/pergunta-frequente-cadastro.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,9 @@ import { PerguntaFrequenteVisualizacaoComponent } from './visualizacao/pergunta-
 
   ],
   entryComponents: [
+    PerguntaFrequenteVisualizacaoComponent,
+    PerguntaFrequenteCadastroComponent,
+    PerguntaFrequenteCadastroModalComponent
   ]
 })
 export class RegraCampoModule { }

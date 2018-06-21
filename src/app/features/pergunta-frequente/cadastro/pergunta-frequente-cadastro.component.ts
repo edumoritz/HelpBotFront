@@ -4,17 +4,19 @@ import { faBan, faSave } from '@fortawesome/free-solid-svg-icons';
 import { Modulo } from '../../../models/funcionalidade/modulo.model';
 import { ARegraCampoService } from '../../../services-abstract/regra-campo.service';
 import { RegraCampo } from '../../../models/funcionalidade/regra-campo.model';
+import { APerguntaFrequenteService } from '../../../services-abstract/pergunta-frequente.service';
+import { PerguntaFrequente } from '../../../models/perguntas-frequentes/pergunta-frequente.model';
 
 @Component({
   selector: 'help-bot-regra-campo-cadastro',
   templateUrl: './regra-campo-cadastro.component.html'
 })
-export class RegraCampoCadastroComponent {
+export class PerguntaFrequenteCadastroComponent {
 
   public fontAwesomeBan = faBan;
   public fontAwesomeSave = faSave;
 
-  public regraCampo = new RegraCampo();
+  public perguntaFrequente = new PerguntaFrequente();
 
   public opcoes = [
     {
@@ -32,28 +34,27 @@ export class RegraCampoCadastroComponent {
   ] as any[];
 
   constructor(
-    private regraCampoService: ARegraCampoService,
+    private PerguntaFrequenteService: APerguntaFrequenteService,
     private activatedRoute: ActivatedRoute
   ) { 
     this.activatedRoute.params.subscribe((param) => {
       const id = param['id'];
 
       if (id !== 'null') {
-        this.regraCampoService.getOne(Number(id)).subscribe((modulo) => {
-          this.regraCampo.id = modulo.id;
-          this.regraCampo.nome = modulo.nome;
+        this.PerguntaFrequenteService.getOne(Number(id)).subscribe((modulo) => {
+          this.perguntaFrequente.id = modulo.id;
         });
       }
     });
    }
 
    public salvar(): void {
-    if (this.regraCampo.id) {
-      this.regraCampoService.put(this.regraCampo).subscribe((modulo) => {
+    if (this.perguntaFrequente.id) {
+      this.PerguntaFrequenteService.put(this.perguntaFrequente).subscribe((modulo) => {
         window.history.back();
       });
     } else {
-      this.regraCampoService.post(this.regraCampo).subscribe((modulo) => {
+      this.PerguntaFrequenteService.post(this.perguntaFrequente).subscribe((modulo) => {
         window.history.back();
       });
     }
