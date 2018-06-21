@@ -9,7 +9,7 @@ import { PerguntaFrequente } from '../../../models/perguntas-frequentes/pergunta
 
 
 export interface IPerguntaFrequenteCadastroModal {
-  regraCampo: PerguntaFrequente;
+  perguntaFrequente: PerguntaFrequente;
 }
 
 export class State {
@@ -20,6 +20,7 @@ export class State {
   selector: 'help-bot-regra-campo-cadastro-modal',
   templateUrl: './regra-campo-cadastro-modal.component.html'
 })
+
 export class PerguntaFrequenteCadastroModalComponent
 extends ModalSuperComponent<IPerguntaFrequenteCadastroModal, void>
 implements IPerguntaFrequenteCadastroModal {

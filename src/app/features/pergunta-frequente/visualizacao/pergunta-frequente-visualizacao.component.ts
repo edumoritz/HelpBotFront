@@ -9,10 +9,14 @@ import { PaginationConfig } from 'ngx-bootstrap/pagination';
 import { MatTableDataSource } from '@angular/material';
 import { PerguntaFrequente } from '../../../models/perguntas-frequentes/pergunta-frequente.model';
 import { APerguntaFrequenteService } from '../../../services-abstract/pergunta-frequente.service';
+import { PerguntaFrequenteCadastroModalComponent } from '../cadastro/pergunta-frequente-cadastro-modal.component';
 
+export interface IPerguntaFrequenteCadastroModal {
+  perguntaFrequente: PerguntaFrequente;
+}
 @Component({
-  selector: 'help-bot-regra-campo-visualizacao',
-  templateUrl: './regra-campo-visualizacao.component.html'
+  selector: 'help-bot-pergunta-frequente-visualizacao',
+  templateUrl: './pergunta-frequente-visualizacao.component.html'
 })
 export class PerguntaFrequenteVisualizacaoComponent {
 
@@ -20,14 +24,14 @@ export class PerguntaFrequenteVisualizacaoComponent {
   public fontAwesomePlusCircle = faPlusCircle;
   public fontAwesomeTimeCircle = faTimesCircle;
 
-  public regraCampos = [] as PerguntaFrequente[];
+  public perguntaFrequente = [] as PerguntaFrequente[];
 
   public paginacao = new Paginacao();
 
   public dataSourceTable = new MatTableDataSource<PerguntaFrequente>([]);
 
   constructor(
-    private regraCampoService: APerguntaFrequenteService,
+    private perguntaFrequenteService: APerguntaFrequenteService,
     private router: Router,
     private modalService: ModalService,
     private paginationConfig: PaginationConfig
@@ -36,14 +40,14 @@ export class PerguntaFrequenteVisualizacaoComponent {
     this.buscarTodos();
    }
 
-   public entityEvent(regraCampo?: PerguntaFrequente): void {
-    if (!regraCampo) {
-      regraCampo = new PerguntaFrequente();
+   public entityEvent(perguntaFrequente?: PerguntaFrequente): void {
+    if (!perguntaFrequente) {
+      perguntaFrequente = new PerguntaFrequente();
     }
 
     this.modalService.addModal<IPerguntaFrequenteCadastroModal, void>(
       PerguntaFrequenteCadastroModalComponent,
-      { regraCampo: regraCampo }
+      { perguntaFrequente: perguntaFrequente }
     ).subscribe(() => {
       this.buscarTodos();
     });
@@ -54,13 +58,13 @@ export class PerguntaFrequenteVisualizacaoComponent {
     this.buscarTodos();
   }
 
-  public remover(regra: PerguntaFrequente): void {
-    this.regraCampoService.delete(regra.id).subscribe(() => this.buscarTodos());
+  public remover(pergunta: PerguntaFrequente): void {
+    this.perguntaFrequenteService.delete(pergunta.id).subscribe(() => this.buscarTodos());
   }
 
   private buscarTodos(): void {
-    this.regraCampoService.getAll(this.paginacao).subscribe((response) => {
-      this.regraCampos = response.itens;
+    this.perguntaFrequenteService.getAll(this.paginacao).subscribe((response) => {
+      this.perguntaFrequente = response.itens;
       this.dataSourceTable.data = response.itens;
       this.paginacao.totalItens = response.qtdItens;
     });
