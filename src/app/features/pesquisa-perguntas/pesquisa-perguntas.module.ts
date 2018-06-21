@@ -10,7 +10,7 @@ import { MatButtonModule, MatAutocompleteModule } from '@angular/material';
 import { ModalModule } from '../../components/modal/modal.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { PerguntaFrequenteVisualizacaoComponent } from './visualizacao/pergunta-frequente-visualizacao.component';
+import { PesquisaPerguntaVisualizacaoComponent } from './visualizacao/pesquisa-perguntas-visualizacao.component';
 
 @NgModule({
   imports: [
@@ -27,8 +27,7 @@ import { PerguntaFrequenteVisualizacaoComponent } from './visualizacao/pergunta-
     BrowserAnimationsModule
   ],
   declarations: [
-    PerguntaFrequenteVisualizacaoComponent
-
+    PesquisaPerguntaVisualizacaoComponent
   ],
   entryComponents: [
   ]

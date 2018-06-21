@@ -43,5 +43,9 @@ export class PerguntaFrequenteService extends APerguntaFrequenteService {
   public delete(id: number): Observable<void> {
     return this.requestService.delete(id);
   }
+  
+  public getBySearch(paginacao: Paginacao): Observable<Pageable<PerguntaFrequente>> {
+    return this.requestService.getBySearch(paginacao);
+  }
 
 }

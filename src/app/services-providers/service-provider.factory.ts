@@ -23,7 +23,7 @@ import { TutorialTestService } from '../test/service/tutorial-test.service';
 import { PerguntaFrequente } from '../models/perguntas-frequentes/pergunta-frequente.model';
 import { APerguntaFrequente, APerguntaFrequenteService } from '../services-abstract/pergunta-frequente.service';
 
-const SERVER_MODE = false;
+const SERVER_MODE = true;
 
 type ProviderType = TypeProvider |
 ValueProvider |

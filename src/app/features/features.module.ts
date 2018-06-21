@@ -11,7 +11,7 @@ import { TutorialModule } from './tutorial/tutorial.module';
     ModuloModule,
     FuncionalidadesModule,
     RegraCampoModule,
-    TutorialModule
+    TutorialModule,
   ],
   exports: [],
   declarations: [],
