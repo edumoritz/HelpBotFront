@@ -1,5 +1,4 @@
-import { Empresa } from "../usuario/empresa.model";
-import { EnumType } from "../enumerate/enum-type.enum";
+import { Empresa } from "./empresa.model";
 
 export class Usuario {
   constructor(
@@ -7,7 +6,7 @@ export class Usuario {
     public nome?: string,
     public login?: string,
     public senha?: string,
-    public tipoUser?: EnumType,
+    public tipoUser?: string,
     public empresa?: Empresa
   ) { }
 }
