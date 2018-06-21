@@ -1,12 +1,9 @@
-import { Component, NgModule } from '@angular/core';
-import { Router } from '@angular/router';
-import { Paginacao } from '../../../models/paginacao/paginacao.model';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { ModalService } from '../../../components/modal/modal.service';
-import { PaginationConfig } from 'ngx-bootstrap/pagination';
+import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { Router } from '@angular/router';
+import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { Tutorial } from '../../../models/tutorial/tutorial.model';
 import { ATutorialService } from '../../../services-abstract/tutorial.service';
 
@@ -29,15 +26,13 @@ export class TutorialVisualizacaoComponent {
   constructor(
     private tutorialService: ATutorialService,
     private router: Router,
-    private modalService: ModalService,
-    private paginationConfig: PaginationConfig
   ) {
     this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 
    public entityEvent(tutorial?: Tutorial): void {
-     if (tutorial.id) {
+     if (tutorial && tutorial.id) {
        this.router.navigate(['/home/tutorial-cadastro', tutorial.id]);
      } else {
       this.router.navigate(['/home/tutorial-cadastro']);

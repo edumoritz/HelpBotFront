@@ -43,8 +43,8 @@ export class PesquisaPerguntaVisualizacaoComponent {
   }
 
   private buscarTodos(): void {
-    this.pesquisaPerguntaService.getAll().subscribe((response) => {
-      this.perguntaFrequente = response.itens;
-    });
+    // this.pesquisaPerguntaService.getAll().subscribe((response) => {
+    //   this.perguntaFrequente = response.itens;
+    // });
   }
 }

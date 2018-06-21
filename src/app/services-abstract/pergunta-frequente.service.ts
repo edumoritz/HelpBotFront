@@ -17,6 +17,6 @@ export abstract class APerguntaFrequenteService implements InterfaceResquestServ
 
   public abstract delete(id: number): Observable<void>;
 
-  public abstract getBySearch(): Observable<Pageable<PerguntaFrequente>>;
+  // public abstract getBySearch(): Observable<Pageable<PerguntaFrequente>>;
 
 }

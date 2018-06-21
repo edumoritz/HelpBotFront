@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PageModule } from '../../components/page/page.module';
 
@@ -11,6 +11,7 @@ import { ModalModule } from '../../components/modal/modal.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TutorialVisualizacaoComponent } from './visualizacao/tutorial-visualizacao.component';
+import { TutorialCadastroComponent } from './cadastro/tutorial-cadastro.component';
 
 @NgModule({
   imports: [
@@ -24,10 +25,12 @@ import { TutorialVisualizacaoComponent } from './visualizacao/tutorial-visualiza
     MatInputModule,
     MatButtonModule,
     PaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   declarations: [
-    TutorialVisualizacaoComponent
+    TutorialVisualizacaoComponent,
+    TutorialCadastroComponent
   ],
   entryComponents: [
   ]

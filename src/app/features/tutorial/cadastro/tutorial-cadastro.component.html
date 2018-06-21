@@ -1,19 +1,48 @@
 <help-bot-page titulo="Tutorial">
 
-  <div>
-    <button mat-raised-button color="primary">
+  <div *ngIf="!tutorial.id">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do Tutorial</mat-label>
+      <input
+        matInput
+        placeholder="Ex: Nota Fiscal"
+        [formControl]="tutorialNome"
+        >
+    </mat-form-field>
+  </div>
+
+  <h2 *ngIf="tutorial.id">{{ tutorial.nome }}</h2>
+
+  <div *ngIf="tutorial.id">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addTitulo()"
+      >
       Adicionar Título
     </button>
 
-    <button mat-raised-button color="primary">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addDescricao()"
+      >
       Adicionar Descrição
     </button>
 
-    <button mat-raised-button color="primary">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addCaminho()"
+      >
       Adicionar Caminho
     </button>
 
-    <button mat-raised-button color="primary">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addImage()"
+      >
       Adicionar Imagem
     </button>
   </div>

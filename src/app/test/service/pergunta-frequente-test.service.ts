@@ -97,7 +97,7 @@ export class PerguntaFrequenteTestService implements APerguntaFrequenteService {
     return new Observable<Pageable<PerguntaFrequente>>((observer) => {
 
       const list = [] as PerguntaFrequente[];
-      
+
       observer.next(new Pageable<PerguntaFrequente>(this.listaPergunta.size, list));
       observer.complete();
     });
