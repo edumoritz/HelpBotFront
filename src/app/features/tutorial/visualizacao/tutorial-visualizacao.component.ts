@@ -37,9 +37,11 @@ export class TutorialVisualizacaoComponent {
    }
 
    public entityEvent(tutorial?: Tutorial): void {
-    if (!tutorial) {
-      tutorial = new Tutorial();
-    }
+     if (tutorial.id) {
+       this.router.navigate(['/home/tutorial-cadastro', tutorial.id]);
+     } else {
+      this.router.navigate(['/home/tutorial-cadastro']);
+     }
   }
 
   public onChangePage(page: number): void {
