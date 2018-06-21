@@ -20,10 +20,11 @@ import { AFuncionalidadeService } from '../services-abstract/funcionalidade.serv
 import { ATutorialService } from '../services-abstract/tutorial.service';
 import { TutorialService } from '../services/tutorial.service';
 import { TutorialTestService } from '../test/service/tutorial-test.service';
-import { PerguntaFrequente } from '../models/perguntas-frequentes/pergunta-frequente.model';
-import { APerguntaFrequente, APerguntaFrequenteService } from '../services-abstract/pergunta-frequente.service';
+import { APerguntaFrequenteService } from '../services-abstract/pergunta-frequente.service';
+import { PerguntaFrequenteTestService } from '../test/service/pergunta-frequente-test.service';
+import { PerguntaFrequenteService } from '../services/pergunta-frequente.service';
 
-const SERVER_MODE = true;
+const SERVER_MODE = false;
 
 type ProviderType = TypeProvider |
 ValueProvider |
