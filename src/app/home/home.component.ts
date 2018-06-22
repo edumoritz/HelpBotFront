@@ -6,7 +6,7 @@ import { faHireAHelper } from '@fortawesome/free-brands-svg-icons';
 import { faHubspot } from '@fortawesome/free-brands-svg-icons';
 import { faElementor } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -84,6 +84,11 @@ export class HomeComponent {
             acao: () => this.router.navigate(['/home/tutorial-visualizacao']),
             nome: 'Tutorial',
             icon: faCog
+          },
+          {
+            acao: () => this.router.navigate(['/home/pesquisa-perguntas']),
+            nome: 'Pesquisar',
+            icon: faSearch
           }
         ]
       },
