@@ -108,7 +108,7 @@ implements IPerguntaFrequenteCadastroModal, OnInit {
   }
 
   public onKeyUpKeyword(evento: KeyboardEvent): void {
-    if (evento.keyCode === 8) {
+    if (evento.keyCode === 32) {
       this.addKeyword();
     }
   }

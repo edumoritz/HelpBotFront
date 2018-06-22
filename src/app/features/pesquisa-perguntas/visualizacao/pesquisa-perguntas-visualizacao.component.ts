@@ -13,8 +13,6 @@ import { Observable } from 'rxjs/Observable';
 })
 export class PesquisaPerguntaVisualizacaoComponent {
 
-  public pesquisaPerguntas = [] as PerguntaFrequente[];
-
   public query = '';
 
   public perguntas: Observable<PerguntaFrequente[]>;

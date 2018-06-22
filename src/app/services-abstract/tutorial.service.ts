@@ -9,6 +9,8 @@ export abstract class ATutorialService implements InterfaceResquestService<Tutor
 
   public abstract post(objeto: Tutorial): Observable<Tutorial>;
 
+  public abstract postItens(objeto: TutorialItens): Observable<TutorialItens>;
+
   public abstract put(objeto: Tutorial): Observable<Tutorial>;
 
   public abstract getAll(paginacao: Paginacao): Observable<Pageable<Tutorial>>;

@@ -93,9 +93,37 @@ export class TutorialCadastroComponent {
       this.tutorialService.post(this.tutorial)
         .subscribe((tutorial) => {
           this.tutorial = tutorial;
+          this.addDescricao();
         }
       );
     }
+  }
+
+  public salvarTutorial(): void {
+    const tutorialItem = new TutorialItens();
+
+    let ordem = 0;
+    for (const item of this.itens) {
+      item.objeto.ordem = ordem;
+
+      if (item.formaExibicao === TipoExibicao.DESCRICAO) {
+        tutorialItem.descricoes.push(item.objeto);
+      } else if (item.formaExibicao === TipoExibicao.IMAGEM) {
+        tutorialItem.imagens.push(item.objeto);
+      }
+
+      ordem++;
+    }
+
+    forkJoin(
+      this.tutorialService.postItens(tutorialItem),
+      this.tutorialService.put(this.tutorial)
+    ).subscribe((res) => {
+      this.montarItens(res[0]);
+      this.tutorial = res[1];
+
+      window.history.back();
+    });
   }
 
   public addDescricao(): void {

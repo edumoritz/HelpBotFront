@@ -1,20 +1,20 @@
 <div class="tela-inteira">
 
+    <!-- [class.menu-home-closed]="menuHomeclosed" -->
   <div
     class="menu-home"
-    [class.menu-home-closed]="menuHomeclosed"
     (window:resize)="onWindowResize($event.target)"
     (mouseover)="menuHomeclosed = false"
     (mouseleave)="sizePequeno ? menuHomeclosed = true : false"
     >
 
-    <div class="icone-menu-help-bot" *ngIf="!menuHomeclosed">
+    <div class="icone-menu-help-bot">
       <fa-icon [icon]="faHelpBot" size="6x"></fa-icon>
     </div>
 
-    <div class="icone-menu-help-bot" *ngIf="menuHomeclosed">
+    <!-- <div class="icone-menu-help-bot" *ngIf="menuHomeclosed">
       <fa-icon [icon]="faHelpBot"></fa-icon>
-    </div>
+    </div> -->
 
     <div
       *ngFor="let itemPaiMenu of itensMenu"
@@ -38,7 +38,6 @@
             </div> -->
             <label
               class="item-selecao"
-              *ngIf="!menuHomeclosed"
               >
               &nbsp;{{ itemPaiMenu.nome }}
             </label>

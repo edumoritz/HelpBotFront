@@ -8,10 +8,10 @@
           matInput
           placeholder="Ex: Nota Fiscal"
           [formControl]="tutorialNome"
-          >
-          <mat-error *ngIf="tutorialNome.invalid">
-            O nome do tutorial é obrigatório
-          </mat-error>
+          />
+        <mat-error *ngIf="tutorialNome.invalid">
+          O nome do tutorial é obrigatório
+        </mat-error>
       </mat-form-field>
     </div>
 
@@ -26,28 +26,29 @@
     </div>
   </div>
 
-  <h2 *ngIf="tutorial.id">{{ tutorial.nome }}</h2>
-
   <div>
 
     <mat-card>
 
       <mat-card-header *ngIf="tutorial.id">
-        <button
+        <mat-input-container class="tamanho-maximo">
+          <input matInput name="nome" [(ngModel)]="tutorial.nome" placeholder="Tutorial Nome" />
+        </mat-input-container>
+        <!-- <button
           mat-raised-button
           color="primary"
           (click)="addDescricao()"
           >
           Adicionar Descrição
-        </button>
+        </button> -->
 
-        <button
+        <!-- <button
           mat-raised-button
           color="primary"
           (click)="addImage()"
           >
           Adicionar Imagem
-        </button>
+        </button> -->
       </mat-card-header>
 
       <mat-card-content>
@@ -55,31 +56,14 @@
         <div *ngFor="let item of itens">
           <br>
 
-          <div [ngSwitch]="item.formaExibicao">
-
-            <div *ngSwitchCase="0">
-              <div class="titulo">
-                <button
-                  mat-icon-button
-                  (click)="removerItem(item)"
-                  >
-                  <fa-icon
-                    [icon]="times"
-                    matTooltip="Excluir Descrição"
-                    >
-                  </fa-icon>
-                </button>
-                <quill-editor
-                  [(ngModel)]="item.objeto.descricao"
-                  [modules]="quillModules"
-                  placeholder="Descrição"
-                  [style.height]="'100%'"
-                  >
-                </quill-editor>
-              </div>
-
-            </div>
-
+          <div class="titulo">
+            <quill-editor
+              [(ngModel)]="item.objeto.descricao"
+              [modules]="quillModules"
+              placeholder="Descrição"
+              [style.height]="'100%'"
+              >
+            </quill-editor>
           </div>
 
         </div>
@@ -89,6 +73,16 @@
     </mat-card>
 
   </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="salvarTutorial()"
+    *ngIf="tutorial.id"
+    [disabled]="!tutorial.nome"
+    >
+    Salvar
+  </button>
 
 
 </help-bot-page>

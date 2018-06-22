@@ -10,20 +10,20 @@ export class TutorialItens {
     public caminhos?: TutorialItemBreadcrumb[],
     public imagens?: TutorialItemImagem[]
   ) {
-    if (!titulos) {
-      titulos = [];
+    if (!this.titulos) {
+      this.titulos = [];
     }
 
-    if (!descricoes) {
-      descricoes = [];
+    if (!this.descricoes) {
+      this.descricoes = [];
     }
 
-    if (!caminhos) {
-      caminhos = [];
+    if (!this.caminhos) {
+      this.caminhos = [];
     }
 
-    if (!imagens) {
-      imagens = [];
+    if (!this.imagens) {
+      this.imagens = [];
     }
   }
 }

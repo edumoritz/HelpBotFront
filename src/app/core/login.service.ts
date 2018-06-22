@@ -52,9 +52,9 @@ export class LoginService {
     headers.append('Accept', 'application/json');
     headers.append('Authorization', `Bearer ${this.tokenService.getAccessToken()}`);
 
-    this.http.post('logout', {}, { headers: headers }).subscribe(() => {
-      this.loginEventService.logout();
-    });
+    // this.http.post('logout', {}, { headers: headers }).subscribe(() => {
+    this.loginEventService.logout();
+    // });
   }
 
 }

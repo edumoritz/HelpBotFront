@@ -1,16 +1,13 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable } from 'rxjs/Rx';
 
 import { ResquestService } from '../core/resquest.service';
-
 import { Pageable } from '../models/paginacao/pageable.model';
 import { Paginacao } from '../models/paginacao/paginacao.model';
-
-import { ATutorialService } from '../services-abstract/tutorial.service';
-import { Tutorial } from '../models/tutorial/tutorial.model';
 import { TutorialItens } from '../models/tutorial/tutorial-itens.model';
+import { Tutorial } from '../models/tutorial/tutorial.model';
+import { ATutorialService } from '../services-abstract/tutorial.service';
 
 @Injectable()
 export class TutorialService extends ATutorialService {
@@ -28,6 +25,10 @@ export class TutorialService extends ATutorialService {
 
   public post(objeto: Tutorial): Observable<Tutorial> {
     return this.requestService.post(objeto);
+  }
+
+  public postItens(objeto: TutorialItens): Observable<TutorialItens> {
+    return this.http.post<TutorialItens>(this.apiUrl + '/itens', objeto);
   }
 
   public put(objeto: Tutorial): Observable<Tutorial> {

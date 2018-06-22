@@ -10,6 +10,7 @@ import { tutorialRoute } from './features/tutorial/tutorial.routing';
 import { HomeComponent } from './home/home.component';
 import { pesquisaPerguntasRoute } from './features/pesquisa-perguntas/pesquisa-perguntas.routing';
 import { perguntaFrequenteRoute } from './features/pergunta-frequente/pergunta-frequente.routing';
+import { pesquisaTutorialRoute } from './features/pesquisa-tutorial/pesquisa-tutorial.routing';
 
 export const APP_ROUTES: Routes = [
   {
@@ -27,7 +28,8 @@ export const APP_ROUTES: Routes = [
       ...demoRoute,
       ...tutorialRoute,
       ...pesquisaPerguntasRoute,
-      ...perguntaFrequenteRoute
+      ...perguntaFrequenteRoute,
+      ...pesquisaTutorialRoute
     ]
   },
   { path: '**', redirectTo: '/home' }

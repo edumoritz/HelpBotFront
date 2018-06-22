@@ -6,6 +6,7 @@ import { RegraCampoModule } from './regra-campo/regra-campo.module';
 import { TutorialModule } from './tutorial/tutorial.module';
 import { PesquisaPerguntaModule } from './pesquisa-perguntas/pesquisa-perguntas.module';
 import { PerguntaFrequenteModule } from './pergunta-frequente/pergunta-frequente.module';
+import { PesquisaTutorialModule } from './pesquisa-tutorial/pesquisa-tutorial.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { PerguntaFrequenteModule } from './pergunta-frequente/pergunta-frequente
     RegraCampoModule,
     TutorialModule,
     PerguntaFrequenteModule,
-    PesquisaPerguntaModule
+    PesquisaPerguntaModule,
+    PesquisaTutorialModule
   ],
   exports: [],
   declarations: [],

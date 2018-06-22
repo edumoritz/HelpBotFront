@@ -33,6 +33,10 @@ export class TutorialTestService implements ATutorialService {
     });
   }
 
+  public postItens(objeto: TutorialItens): Observable<TutorialItens> {
+    return null;
+  }
+
   public put(tutorial: Tutorial): Observable<Tutorial> {
     return new Observable((observer) => {
       if (!tutorial.id) {

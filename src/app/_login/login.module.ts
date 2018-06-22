@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
-import { ModuleWithProviders } from '@angular/core';
-
 import { FormsModule } from '@angular/forms';
-
-import { LoginComponent } from './login.component';
-import { PageModule } from '../components/page/page.module';
+import { MatCardModule } from '@angular/material/card';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { PageModule } from '../components/page/page.module';
+import { LoginComponent } from './login.component';
+import { MatInputModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
     FormsModule,
     PageModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
   ],
   declarations: [
     LoginComponent

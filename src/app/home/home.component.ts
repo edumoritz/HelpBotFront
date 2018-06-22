@@ -49,6 +49,13 @@ export class HomeComponent {
             nome: menu.nome
           });
         }
+
+        this.itensMenu.push(
+          {
+            acao: () => this.logout(),
+            nome: 'Sair'
+          }
+        );
       });
     });
 

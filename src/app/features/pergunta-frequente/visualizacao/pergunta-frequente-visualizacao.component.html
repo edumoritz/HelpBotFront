@@ -1,4 +1,4 @@
-<help-bot-page titulo="PerguntaFrequente">
+<help-bot-page titulo="Pergunta Frequente">
 
   <div class="separacao-itens">
     <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent()">
@@ -34,13 +34,13 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="nome">
-      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
-      <mat-cell *matCellDef="let perguntaFrequente">{{ perguntaFrequente.nome }}</mat-cell>
+    <ng-container matColumnDef="pergunta">
+      <mat-header-cell *matHeaderCellDef>Pergunta</mat-header-cell>
+      <mat-cell *matCellDef="let perguntaFrequente">{{ perguntaFrequente.pergunta }}</mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="['#', 'nome']"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: ['#', 'nome'];"></mat-row>
+    <mat-header-row *matHeaderRowDef="['#', 'pergunta']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['#', 'pergunta'];"></mat-row>
   </mat-table>
 
   <pagination

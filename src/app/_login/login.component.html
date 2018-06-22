@@ -1,34 +1,50 @@
 <div class="container-center">
 
-  <h1 align="center">HelpBot</h1>
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <h1 align="center">HelpBot</h1>
 
-  <fa-icon
-    [icon]="fontAwesomeHelpHirer"
-    class="my-helpbot-color"
-    align="center"
-    size="6x"
-    >
-  </fa-icon>
-  <br><br>
-  <div class="row my-fex-center">
-    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group">
-      <input class="form-control input-sm" placeholder="Usuário" [(ngModel)]="username" />
-    </div>
-  </div>
+      <fa-icon
+        [icon]="fontAwesomeHelpHirer"
+        class="my-helpbot-color"
+        align="center"
+        size="6x"
+        >
+      </fa-icon>
+    </mat-card-header>
 
-  <div class="row my-fex-center">
-    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group">
-      <input class="form-control input-sm" placeholder="Senha" type="password" [(ngModel)]="password" />
-    </div>
-  </div>
-  <div align="center">
-    <button
-      color="primary"
-      (click)="login()"
-      [disabled]="!username || !password"
-      class="btn btn-primary"
-      >
-      Logar
-    </button>
-  </div>
+    <mat-card-content>
+      <div class="row my-fex-center">
+        <mat-input-container class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+          <input
+            matInput
+            placeholder="Usuário"
+            [(ngModel)]="username"
+            />
+        </mat-input-container>
+      </div>
+
+      <div class="row my-fex-center">
+        <mat-input-container class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+          <input
+            matInput
+            placeholder="Senha"
+            [(ngModel)]="password"
+            type="password"
+            />
+        </mat-input-container>
+      </div>
+      <div align="center">
+        <button
+          color="primary"
+          (click)="login()"
+          [disabled]="!username || !password"
+          mat-raised-button
+          >
+          Logar
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
 </div>

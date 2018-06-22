@@ -1,10 +1,10 @@
-<help-bot-page titulo="Dúvidas">
+<help-bot-page titulo="Pesquisa de Manuais">
 
   <div class="row">
     <mat-input-container class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
       <input
         matInput
-        placeholder="Pesquise sua dúvida"
+        placeholder="Pesquise um manual"
         name="query"
         [(ngModel)]="query"
         />
@@ -13,7 +13,7 @@
         (click)="pesquisar()"
         mat-icon-button
         matSuffix
-        matTooltip="Pesquisar sua dúvida"
+        matTooltip="Pesquise um manual"
         [disabled]="!query"
         >
         <fa-icon
@@ -26,14 +26,13 @@
 
   <mat-list>
     <mat-list-item
-      *ngFor="let pergunta of perguntas | async"
+      *ngFor="let tutorial of tutoriais | async"
       class="pergunta"
-      (click)="irParaTutorial(pergunta)"
+      (click)="irParaTutorial(tutorial)"
       >
-      {{ pergunta.pergunta }}
+      {{ tutorial.nome }}
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
 
 </help-bot-page>
-
