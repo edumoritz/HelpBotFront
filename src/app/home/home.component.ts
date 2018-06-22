@@ -14,6 +14,8 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 
 import { LoginService } from '../core/login.service';
+import { MenuService } from '../services/menu.service';
+import { UserControllerService } from '../core/user-controller.service';
 
 export interface IItemPaiMenu {
   nome: string;
@@ -45,9 +47,14 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private loginService: LoginService,
+    private menuService: MenuService,
+    private user: UserControllerService,
     private loginEventService: LoginEventService
   ) {
     this.onWindowResize(window);
+
+    
+
 
     this.itensMenu.push(
       {
