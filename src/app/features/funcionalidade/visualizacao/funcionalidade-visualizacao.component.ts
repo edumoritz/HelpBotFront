@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { Funcionalidade } from '../../../models/funcionalidade/funciondalidade.model';
-import { AFuncionalidadeService } from '../../../services-abstract/funcionalidade.service';
-import { Router } from '@angular/router';
-import { Paginacao } from '../../../models/paginacao/paginacao.model';
-import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { IFuncionalidadeCadastroModal, FuncionalidadeCadastroModalComponent } from '../cadastro/funcionalidade-cadastro-modal.component';
-import { ModalService } from '../../../components/modal/modal.service';
-import { FuncionalidadeCadastroComponent } from '../cadastro/funcionalidade-cadastro.component';
 import { MatTableDataSource } from '@angular/material';
+import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { ModalService } from '../../../components/modal/modal.service';
+import { Funcionalidade } from '../../../models/funcionalidade/funciondalidade.model';
+import { Paginacao } from '../../../models/paginacao/paginacao.model';
+import { AFuncionalidadeService } from '../../../services-abstract/funcionalidade.service';
+import {
+  FuncionalidadeCadastroModalComponent,
+  IFuncionalidadeCadastroModal,
+} from '../cadastro/funcionalidade-cadastro-modal.component';
 
 
 @Component({
@@ -29,10 +31,8 @@ export class FuncionalidadeVisualizacaoComponent {
 
   constructor(
     private funcionalidadeService: AFuncionalidadeService,
-    private router: Router,
     private modalService: ModalService
   ) {
-    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 
@@ -52,7 +52,7 @@ export class FuncionalidadeVisualizacaoComponent {
   public remover(func: Funcionalidade): void {
     this.funcionalidadeService.delete(func.id).subscribe(() => this.buscarTodos());
   }
-  
+
   public onChangePage(page: number): void {
     this.paginacao.page = page - 1;
     this.buscarTodos();

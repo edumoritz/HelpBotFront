@@ -32,7 +32,11 @@
               (ngModelChange)="changeTutorialQuery($event)"
               [matAutocomplete]="tutorialAutocomplete"
               />
-            <mat-autocomplete #tutorialAutocomplete="matAutocomplete" [displayWith]="displayTutorial">
+            <mat-autocomplete
+              #tutorialAutocomplete="matAutocomplete"
+              [displayWith]="displayTutorial"
+              (optionSelected)="optionSelected($event)"
+              >
               <mat-option *ngFor="let tutorial of tutoriais | async" [value]="tutorial">
                 {{ tutorial.nome }}
               </mat-option>
@@ -50,6 +54,7 @@
               name="keyword"
               placeholder="Palavras-Chaves"
               [(ngModel)]="keyword"
+              (keyup)="onKeyUpKeyword($event)"
               />
               <button
                 mat-icon-button
@@ -74,6 +79,7 @@
               <span>{{ keyword.descricao }}</span>
               <fa-icon
                 [icon]="times"
+                (click)="removeKeyword(keyword)"
                 >
               </fa-icon>
             </mat-chip>
@@ -85,15 +91,18 @@
     <div class="modal-rodape">
       <div class="btn-group">
         <button
-          class="btn btn-xs btn-danger"
+          mat-raised-button
+          color="warn"
           (click)="cancelar()"
           >
           Cancelar
         </button>
 
         <button
-          class="btn btn-xs btn-primary"
+          mat-raised-button
+          color="primary"
           (click)="salvar()"
+          [disabled]="!isValid()"
           >
           Salvar
         </button>

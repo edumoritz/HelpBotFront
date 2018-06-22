@@ -1,16 +1,12 @@
-import { Router } from '@angular/router';
-import { Component, ViewChild } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
 import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { ACampoService } from '../../../services-abstract/campo.service';
-import { Paginacao } from '../../../models/paginacao/paginacao.model';
-import { Campo } from '../../../models/funcionalidade/campo.model';
 import { ModalService } from '../../../components/modal/modal.service';
-import { ModuloCadastroModalComponent } from '../../modulo/cadastro/modulo-cadastro-modal.component';
-import { ICampoCadastroModal, CampoCadastroModalComponent } from '../cadastro/campo-cadastro-modal.component';
-import { MatTableDataSource } from '@angular/material';
-import { PaginationConfig } from 'ngx-bootstrap/pagination';
+import { Campo } from '../../../models/funcionalidade/campo.model';
+import { Paginacao } from '../../../models/paginacao/paginacao.model';
+import { ACampoService } from '../../../services-abstract/campo.service';
+import { CampoCadastroModalComponent, ICampoCadastroModal } from '../cadastro/campo-cadastro-modal.component';
 
 @Component({
   selector: 'help-bot-campo-visualizacao',
@@ -31,12 +27,9 @@ export class CampoVisualizacaoComponent {
   constructor(
 
     private campoService: ACampoService,
-    private router: Router,
-    private modalService: ModalService,
-    private paginationConfig: PaginationConfig
+    private modalService: ModalService
 
   ) {
-    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
   }
 

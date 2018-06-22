@@ -9,6 +9,7 @@ import { PerguntaFrequente } from '../../../models/perguntas-frequentes/pergunta
 import { Tutorial } from '../../../models/tutorial/tutorial.model';
 import { APerguntaFrequenteService } from '../../../services-abstract/pergunta-frequente.service';
 import { ATutorialService } from '../../../services-abstract/tutorial.service';
+import { MatAutocompleteSelectedEvent } from '@angular/material';
 
 
 export interface IPerguntaFrequenteCadastroModal {
@@ -56,9 +57,27 @@ implements IPerguntaFrequenteCadastroModal, OnInit {
 
   public addKeyword(): void {
     if (this.keyword) {
+      this.keyword = this.keyword.replace(' ', '');
       const perKeyword = new PerguntaFrequenteKeyword();
       perKeyword.descricao = this.keyword;
+      if (!this.perguntaFrequente.keywords) {
+        this.perguntaFrequente.keywords = [];
+      }
       this.perguntaFrequente.keywords.push(perKeyword);
+      this.keyword = '';
+    }
+  }
+
+  public optionSelected(evento: MatAutocompleteSelectedEvent): void {
+    const tutorial = evento.option.value;
+    this.perguntaFrequente.resposta = tutorial;
+  }
+
+  public removeKeyword(item: PerguntaFrequenteKeyword): void {
+    const index = this.perguntaFrequente.keywords.indexOf(item);
+
+    if (index > -1) {
+      this.perguntaFrequente.keywords.splice(index, 1);
     }
   }
 
@@ -86,6 +105,24 @@ implements IPerguntaFrequenteCadastroModal, OnInit {
     }
 
     acao.subscribe(() => this.modalService.fecharModal(this));
+  }
+
+  public onKeyUpKeyword(evento: KeyboardEvent): void {
+    if (evento.keyCode === 8) {
+      this.addKeyword();
+    }
+  }
+
+  public isValid(): boolean {
+    if (
+      !this.perguntaFrequente.resposta ||
+      !this.perguntaFrequente.pergunta ||
+      !(this.perguntaFrequente.keywords &&
+      this.perguntaFrequente.keywords.length)) {
+      return false;
+    }
+
+    return true;
   }
 
 }

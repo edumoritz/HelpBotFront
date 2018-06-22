@@ -1,54 +1,39 @@
-import { Component, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
-import { Paginacao } from '../../../models/paginacao/paginacao.model';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { ARegraCampoService } from '../../../services-abstract/regra-campo.service';
-import { RegraCampo } from '../../../models/funcionalidade/regra-campo.model';
-import { ModalService } from '../../../components/modal/modal.service';
-import { PaginationConfig } from 'ngx-bootstrap/pagination';
-import { MatTableDataSource } from '@angular/material';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
+
 import { PerguntaFrequente } from '../../../models/perguntas-frequentes/pergunta-frequente.model';
 import { APerguntaFrequenteService } from '../../../services-abstract/pergunta-frequente.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'help-bot-pesquisa-perguntas-visualizacao',
-  templateUrl: './pesquisa-perguntas-visualizacao.component.html'
+  templateUrl: './pesquisa-perguntas-visualizacao.component.html',
+  styleUrls: ['./pesquisa-perguntas-visualizacao.component.scss']
 })
 export class PesquisaPerguntaVisualizacaoComponent {
 
-  public fontAwesomePencil = faPencilAlt;
-  public fontAwesomePlusCircle = faPlusCircle;
-  public fontAwesomeTimeCircle = faTimesCircle;
-  
-  public paginacao = new Paginacao();
-
   public pesquisaPerguntas = [] as PerguntaFrequente[];
+
+  public query = '';
+
+  public perguntas: Observable<PerguntaFrequente[]>;
+
+  public searchIcon = faSearch;
 
   constructor(
     private pesquisaPerguntaService: APerguntaFrequenteService,
-    private router: Router,
-    private modalService: ModalService,
+    private router: Router
   ) {
-    this.paginacao.itensPerPage = 2;
-    this.buscarTodos();
-   }
-
-   public entityEvent(perguntaFrequente?: PerguntaFrequente): void {
-    if (!perguntaFrequente) {
-      perguntaFrequente = new PerguntaFrequente();
-    }
   }
 
-  public remover(perguntaFrequente: PerguntaFrequente): void {
-    this.pesquisaPerguntaService.delete(perguntaFrequente.id).subscribe(() => this.buscarTodos());
+  public pesquisar(): void {
+    this.perguntas = this.pesquisaPerguntaService.getBySearch(this.query)
+      .map((pagina) => pagina.itens);
   }
 
-  private buscarTodos(): void {
-    this.pesquisaPerguntaService.getAll(this.paginacao).subscribe((response) => {
-      this.pesquisaPerguntas = response.itens;
-      this.paginacao.totalItens = response.qtdItens;
-    });
+  public irParaTutorial(pergunta: PerguntaFrequente): void {
+    this.router.navigate(['/home/tutorial', pergunta.resposta.id]);
   }
+
 }

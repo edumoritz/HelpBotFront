@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
@@ -44,8 +44,12 @@ export class PerguntaFrequenteService extends APerguntaFrequenteService {
     return this.requestService.delete(id);
   }
 
-  // public getBySearch(paginacao: Paginacao): Observable<Pageable<PerguntaFrequente>> {
-  //   return this.requestService.getBySearch(paginacao);
-  // }
+  public getBySearch(query: string): Observable<Pageable<PerguntaFrequente>> {
+    let httpParams = new HttpParams();
+    httpParams = httpParams.append('query', query);
+    return this.http.get<Pageable<PerguntaFrequente>>(
+      this.apiUrl + '/search', { params: httpParams }
+    );
+  }
 
 }

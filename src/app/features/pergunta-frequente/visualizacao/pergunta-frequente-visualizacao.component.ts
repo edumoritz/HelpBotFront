@@ -32,11 +32,8 @@ export class PerguntaFrequenteVisualizacaoComponent {
 
   constructor(
     private perguntaFrequenteService: APerguntaFrequenteService,
-    private router: Router,
-    private modalService: ModalService,
-    private paginationConfig: PaginationConfig
+    private modalService: ModalService
   ) {
-    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 

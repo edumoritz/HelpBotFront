@@ -25,9 +25,8 @@ export class TutorialVisualizacaoComponent {
 
   constructor(
     private tutorialService: ATutorialService,
-    private router: Router,
+    private router: Router
   ) {
-    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 

@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { Modulo } from '../../../models/funcionalidade/modulo.model';
+
 import { ModalSuperComponent } from '../../../components/modal/modal-super.component';
 import { ModalService } from '../../../components/modal/modal.service';
-import { AModuleService } from '../../../services-abstract/modulo.service';
 import { Campo } from '../../../models/funcionalidade/campo.model';
 import { ACampoService } from '../../../services-abstract/campo.service';
-import {startWith} from 'rxjs/operators/startWith';
-import {map} from 'rxjs/operators/map';
-import {FormControl} from '@angular/forms';
 
 export interface ICampoCadastroModal {
   campo: Campo;
@@ -31,8 +27,7 @@ implements ICampoCadastroModal {
 
   constructor(
     public modalService: ModalService,
-    private campoService: ACampoService,
-    
+    private campoService: ACampoService
   ) {
     super(modalService);
   }

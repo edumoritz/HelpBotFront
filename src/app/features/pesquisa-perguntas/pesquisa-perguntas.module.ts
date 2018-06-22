@@ -1,15 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { PageModule } from '../../components/page/page.module';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatTableModule, MatInputModule } from '@angular/material';
-import { MatButtonModule, MatAutocompleteModule } from '@angular/material';
-import { ModalModule } from '../../components/modal/modal.module';
+import { MatButtonModule, MatInputModule, MatListModule, MatTooltipModule, MatDividerModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+
+import { ModalModule } from '../../components/modal/modal.module';
+import { PageModule } from '../../components/page/page.module';
 import { PesquisaPerguntaVisualizacaoComponent } from './visualizacao/pesquisa-perguntas-visualizacao.component';
 
 @NgModule({
@@ -19,12 +17,13 @@ import { PesquisaPerguntaVisualizacaoComponent } from './visualizacao/pesquisa-p
     PageModule,
     FontAwesomeModule,
     ModalModule,
-    MatTableModule,
-    MatAutocompleteModule,
     MatInputModule,
     MatButtonModule,
     PaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    MatListModule,
+    MatDividerModule
   ],
   declarations: [
     PesquisaPerguntaVisualizacaoComponent

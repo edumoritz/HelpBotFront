@@ -1,19 +1,13 @@
-import { Router } from '@angular/router';
-import { Component, ViewChild } from '@angular/core';
-
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-
+import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { PaginationConfig } from 'ngx-bootstrap/pagination';
 
-import { IModuloCadastroModal } from '../cadastro/modulo-cadastro-modal.component';
 import { ModalService } from '../../../components/modal/modal.service';
-import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { Modulo } from '../../../models/funcionalidade/modulo.model';
+import { Paginacao } from '../../../models/paginacao/paginacao.model';
 import { AModuleService } from '../../../services-abstract/modulo.service';
-import { ModuloCadastroModalComponent } from '../cadastro/modulo-cadastro-modal.component';
+import { IModuloCadastroModal, ModuloCadastroModalComponent } from '../cadastro/modulo-cadastro-modal.component';
 
 @Component({
   selector: 'help-bot-modulo-visualizacao',
@@ -33,11 +27,9 @@ export class ModuloVisualizacaoComponent {
 
   constructor(
     private moduleService: AModuleService,
-    private router: Router,
     private modalService: ModalService,
     private paginationConfig: PaginationConfig
   ) {
-    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
     console.log(this.paginationConfig);
   }

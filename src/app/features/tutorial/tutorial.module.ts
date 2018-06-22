@@ -19,6 +19,7 @@ import { PageModule } from '../../components/page/page.module';
 import { TutorialCadastroComponent } from './cadastro/tutorial-cadastro.component';
 import { TutorialVisualizacaoComponent } from './visualizacao/tutorial-visualizacao.component';
 import { QuillModule } from 'ngx-quill';
+import { TutorialComponent } from './visualizacao/tutorial.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { QuillModule } from 'ngx-quill';
   ],
   declarations: [
     TutorialVisualizacaoComponent,
-    TutorialCadastroComponent
+    TutorialCadastroComponent,
+    TutorialComponent
   ],
   entryComponents: [
   ]

@@ -1,16 +1,15 @@
-import { Component, NgModule } from '@angular/core';
-import { Router } from '@angular/router';
-import { Paginacao } from '../../../models/paginacao/paginacao.model';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { ARegraCampoService } from '../../../services-abstract/regra-campo.service';
-import { RegraCampo } from '../../../models/funcionalidade/regra-campo.model';
-import { ModalService } from '../../../components/modal/modal.service';
-import { IRegraCampoCadastroModal, RegraCampoCadastroModalComponent } from '../cadastro/regra-campo-cadastro-modal.component';
-import { RegraCampoCadastroComponent } from '../cadastro/regra-campo-cadastro.component';
-import { PaginationConfig } from 'ngx-bootstrap/pagination';
+import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { faPencilAlt, faPlusCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { ModalService } from '../../../components/modal/modal.service';
+import { RegraCampo } from '../../../models/funcionalidade/regra-campo.model';
+import { Paginacao } from '../../../models/paginacao/paginacao.model';
+import { ARegraCampoService } from '../../../services-abstract/regra-campo.service';
+import {
+  IRegraCampoCadastroModal,
+  RegraCampoCadastroModalComponent,
+} from '../cadastro/regra-campo-cadastro-modal.component';
 
 @Component({
   selector: 'help-bot-regra-campo-visualizacao',
@@ -30,11 +29,8 @@ export class RegraCampoVisualizacaoComponent {
 
   constructor(
     private regraCampoService: ARegraCampoService,
-    private router: Router,
-    private modalService: ModalService,
-    private paginationConfig: PaginationConfig
+    private modalService: ModalService
   ) {
-    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 

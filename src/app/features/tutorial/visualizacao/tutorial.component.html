@@ -1,0 +1,29 @@
+<help-bot-page titulo="Manual" *ngIf="tutorial">
+
+  <mat-card>
+
+    <mat-card-header>
+      <h2>{{ tutorial.nome }}</h2>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <div *ngFor="let item of itens">
+        <br>
+
+        <div [ngSwitch]="item.formaExibicao">
+
+          <div *ngSwitchCase="0">
+            <div [innerHTML]="item.descricao">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</help-bot-page>
