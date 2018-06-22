@@ -4,6 +4,7 @@ import { Pageable } from '../../models/paginacao/pageable.model';
 import { Paginacao } from '../../models/paginacao/paginacao.model';
 import { ATutorialService } from '../../services-abstract/tutorial.service';
 import { Tutorial } from '../../models/tutorial/tutorial.model';
+import { TutorialItens } from '../../models/tutorial/tutorial-itens.model';
 
 export class TutorialTestService implements ATutorialService {
 
@@ -88,5 +89,9 @@ export class TutorialTestService implements ATutorialService {
       observer.next();
       observer.complete();
     });
+  }
+
+  public getItens(id: number): Observable<TutorialItens> {
+    throw new Error('Not Implemented');
   }
 }

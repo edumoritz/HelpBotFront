@@ -1,11 +1,10 @@
 import { Tutorial } from './tutorial.model';
 
-export class TutorialItemTitulo {
+export class TutorialItemDescricao {
   constructor(
     public id?: number,
+    public descricao?: string,
     public tutorial?: Tutorial,
-    public ordem?: number,
-    public titulo?: string,
-    public tamanho?: string
+    public ordem?: number
   ) { }
 }

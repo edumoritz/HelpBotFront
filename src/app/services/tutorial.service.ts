@@ -10,6 +10,7 @@ import { Paginacao } from '../models/paginacao/paginacao.model';
 
 import { ATutorialService } from '../services-abstract/tutorial.service';
 import { Tutorial } from '../models/tutorial/tutorial.model';
+import { TutorialItens } from '../models/tutorial/tutorial-itens.model';
 
 @Injectable()
 export class TutorialService extends ATutorialService {
@@ -19,7 +20,7 @@ export class TutorialService extends ATutorialService {
   private readonly requestService: ResquestService<Tutorial>;
 
   constructor(
-    public http: HttpClient
+    private http: HttpClient
   ) {
     super();
     this.requestService = new ResquestService<Tutorial>(this.http, this.apiUrl);
@@ -43,6 +44,10 @@ export class TutorialService extends ATutorialService {
 
   public delete(id: number): Observable<void> {
     return this.requestService.delete(id);
+  }
+
+  public getItens(id: number): Observable<TutorialItens> {
+    return this.http.get<TutorialItens>(this.apiUrl + '/itens/' + id);
   }
 
 }

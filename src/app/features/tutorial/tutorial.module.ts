@@ -1,17 +1,24 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { PageModule } from '../../components/page/page.module';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatTableModule, MatInputModule } from '@angular/material';
-import { MatButtonModule, MatAutocompleteModule } from '@angular/material';
-import { ModalModule } from '../../components/modal/modal.module';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTableModule,
+  MatTooltipModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { TutorialVisualizacaoComponent } from './visualizacao/tutorial-visualizacao.component';
+
+import { ModalModule } from '../../components/modal/modal.module';
+import { PageModule } from '../../components/page/page.module';
 import { TutorialCadastroComponent } from './cadastro/tutorial-cadastro.component';
+import { TutorialVisualizacaoComponent } from './visualizacao/tutorial-visualizacao.component';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   imports: [
@@ -26,7 +33,12 @@ import { TutorialCadastroComponent } from './cadastro/tutorial-cadastro.componen
     MatButtonModule,
     PaginationModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatCardModule,
+    FontAwesomeModule,
+    MatTooltipModule,
+    QuillModule
   ],
   declarations: [
     TutorialVisualizacaoComponent,

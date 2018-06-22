@@ -35,7 +35,7 @@ export class TutorialVisualizacaoComponent {
      if (tutorial && tutorial.id) {
        this.router.navigate(['/home/tutorial-cadastro', tutorial.id]);
      } else {
-      this.router.navigate(['/home/tutorial-cadastro']);
+      this.router.navigate(['/home/tutorial-cadastro', 0]);
      }
   }
 

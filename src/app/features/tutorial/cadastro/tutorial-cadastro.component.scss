@@ -1,0 +1,40 @@
+.nome-full {
+  width: 100%;
+}
+
+.caminho {
+  display: flex;
+}
+
+.caminho div {
+  font-weight: bold;
+}
+
+.caminho div:not(:last-child)::after {
+  content: ' > ';
+}
+
+.titulo {
+  width: 100%;
+  display: flex;
+  transition: all 0.5s;
+}
+
+.titulo-grande {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.titulo-medio {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 12px;
+}
+
+.titulo-pequeno {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
+}
+
