@@ -25,7 +25,7 @@ export class UserControllerService {
       if (this.userLogado) {
         observer.next(this.userLogado);
       } else {
-        this.httpClient.get<Usuario>('/api/usuarios/logado')
+        this.httpClient.get<Usuario>('/api/usuario/logado')
           .subscribe((res) => {
             this.userLogado = res;
             observer.next(this.userLogado);

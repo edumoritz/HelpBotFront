@@ -21,30 +21,31 @@
       class="menu-itens"
       >
 
-      <div class="item-menu-pai" (click)="toogleMenuPai(itemPaiMenu)">
+      <!-- <div class="item-menu-pai" (click)="toogleMenuPai(itemPaiMenu)">
         <div class="icone-menu">
           <fa-icon [icon]="itemPaiMenu.icon"></fa-icon>
         </div>
         <label class="item-selecao" *ngIf="!menuHomeclosed">&nbsp;{{ itemPaiMenu.nome }}</label>
-      </div>
+      </div> -->
 
-      <div *ngIf="itemPaiMenu.aberto">
-        <div *ngFor="let itemMenu of itemPaiMenu.filhos">
+      <!-- <div *ngIf="itemPaiMenu.aberto"> -->
+        <!-- <div *ngFor="let itemMenu of itemPaiMenu.filhos"> -->
+        <!-- <div *ngFor="let itemMenu of itensMenu"> -->
 
-          <div class="item-menu-filho" (click)="itemMenu.acao()">
-            <div class="icone-menu">
+          <div class="item-menu-filho" (click)="itemPaiMenu.acao()">
+            <!-- <div class="icone-menu">
               <fa-icon [icon]="itemMenu.icon"></fa-icon>
-            </div>
+            </div> -->
             <label
               class="item-selecao"
               *ngIf="!menuHomeclosed"
               >
-              &nbsp;{{ itemMenu.nome }}
+              &nbsp;{{ itemPaiMenu.nome }}
             </label>
           </div>
 
-        </div>
-      </div>
+        <!-- </div> -->
+      <!-- </div> -->
 
     </div>
 

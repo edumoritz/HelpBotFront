@@ -1,26 +1,23 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ATutorialService } from '../../../services-abstract/tutorial.service';
-import { Tutorial } from '../../../models/tutorial/tutorial.model';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { TutorialItens } from '../../../models/tutorial/tutorial-itens.model';
+import { ActivatedRoute } from '@angular/router';
+import { faArrowDown, faArrowUp, faMinus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { forkJoin } from 'rxjs/observable/forkJoin';
-import { TutorialItemTitulo } from '../../../models/tutorial/tutorial-item-titulo.model';
+
 import { TutorialItemDescricao } from '../../../models/tutorial/tutorial-item-descricao.model';
-import { TutorialItemBreadcrumb } from '../../../models/tutorial/tutorial-item-breadcrumb.model';
 import { TutorialItemImagem } from '../../../models/tutorial/tutorial-item-imagem.model';
-import { faArrowUp, faMinus, faArrowDown, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { TutorialItens } from '../../../models/tutorial/tutorial-itens.model';
+import { Tutorial } from '../../../models/tutorial/tutorial.model';
+import { ATutorialService } from '../../../services-abstract/tutorial.service';
 
 export const enum TipoExibicao {
-  TITULO,
   DESCRICAO,
-  CAMINHO,
   IMAGEM
 }
 
 export interface ITutorialItensMostrar {
   formaExibicao: TipoExibicao;
-  objeto: TutorialItemTitulo | TutorialItemDescricao | TutorialItemBreadcrumb | TutorialItemImagem;
+  objeto: TutorialItemDescricao | TutorialItemImagem;
 }
 
 @Component({
@@ -101,31 +98,6 @@ export class TutorialCadastroComponent {
     }
   }
 
-  public addTitulo(): void {
-    const titulo = new TutorialItemTitulo();
-
-    titulo.tamanho = 'GRANDE';
-    titulo.titulo = 'Título';
-    titulo.tutorial = this.tutorial;
-
-    const novoItem: ITutorialItensMostrar = {
-      formaExibicao: TipoExibicao.TITULO,
-      objeto: titulo
-    };
-
-    this.itens.push(novoItem);
-  }
-
-  public changeTamanhoTitulo(item: TutorialItemTitulo): void {
-    if (item.tamanho === 'GRANDE') {
-      item.tamanho = 'MEDIO';
-    } else if (item.tamanho === 'MEDIO') {
-      item.tamanho = 'PEQUENO';
-    } else {
-      item.tamanho = 'GRANDE';
-    }
-  }
-
   public addDescricao(): void {
     const titulo = new TutorialItemDescricao();
 
@@ -140,6 +112,10 @@ export class TutorialCadastroComponent {
     this.itens.push(novoItem);
   }
 
+  public addImage(): void {
+    // TODO implementar.
+  }
+
   public removerItem(item: ITutorialItensMostrar): void {
     const index = this.itens.indexOf(item);
 
@@ -150,14 +126,8 @@ export class TutorialCadastroComponent {
 
   private montarItens(itens: TutorialItens): void {
     const itensToFormted = [
-      ...(itens.titulos.map<ITutorialItensMostrar>((item) => (
-        { formaExibicao: TipoExibicao.TITULO, objeto: item }
-      ))),
       ...(itens.descricoes.map<ITutorialItensMostrar>((item) => (
         { formaExibicao: TipoExibicao.DESCRICAO, objeto: item }
-      ))),
-      ...(itens.caminhos.map<ITutorialItensMostrar>((item) => (
-        { formaExibicao: TipoExibicao.CAMINHO, objeto: item }
       ))),
       ...(itens.imagens.map<ITutorialItensMostrar>((item) => (
         { formaExibicao: TipoExibicao.IMAGEM, objeto: item }

@@ -13,7 +13,7 @@ import { APerguntaFrequenteService } from '../services-abstract/pergunta-frequen
 @Injectable()
 export class PerguntaFrequenteService extends APerguntaFrequenteService {
 
-  private readonly apiUrl = 'api/pergunta-frequente';
+  private readonly apiUrl = 'api/perguntas-frequentes';
 
   private readonly requestService: ResquestService<PerguntaFrequente>;
 

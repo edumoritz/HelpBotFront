@@ -19,4 +19,6 @@ export abstract class ATutorialService implements InterfaceResquestService<Tutor
 
   public abstract getItens(id: number): Observable<TutorialItens>;
 
+  public abstract getBySearch(query: string): Observable<Pageable<Tutorial>>;
+
 }

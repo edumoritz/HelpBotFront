@@ -10,10 +10,6 @@ export interface IModuloCadastroModal {
   modulo: Modulo;
 }
 
-export class State {
-  constructor(public name: string, public population: string, public flag: string) { }
-}
-
 @Component({
   selector: 'help-bot-modulo-cadastro-modal',
   templateUrl: './modulo-cadastro-modal.component.html'
@@ -21,8 +17,6 @@ export class State {
 export class ModuloCadastroModalComponent
 extends ModalSuperComponent<IModuloCadastroModal, void>
 implements IModuloCadastroModal {
-
-  filteredStates: Observable<any[]>;
 
   public modulo: Modulo;
 

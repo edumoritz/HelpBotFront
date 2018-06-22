@@ -1,0 +1,13 @@
+.palavra-chave {
+  display: flex;
+  justify-content: space-between;
+}
+
+.palavra-chave fa-icon {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.palavra-chave fa-icon:hover {
+  opacity: 0.6;
+}

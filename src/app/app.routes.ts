@@ -9,6 +9,7 @@ import { regraCampoRoute } from './features/regra-campo/regra-campo.routing';
 import { tutorialRoute } from './features/tutorial/tutorial.routing';
 import { HomeComponent } from './home/home.component';
 import { pesquisaPerguntasRoute } from './features/pesquisa-perguntas/pesquisa-perguntas.routing';
+import { perguntaFrequenteRoute } from './features/pergunta-frequente/pergunta-frequente.routing';
 
 export const APP_ROUTES: Routes = [
   {
@@ -25,7 +26,8 @@ export const APP_ROUTES: Routes = [
       ...regraCampoRoute,
       ...demoRoute,
       ...tutorialRoute,
-      ...pesquisaPerguntasRoute
+      ...pesquisaPerguntasRoute,
+      ...perguntaFrequenteRoute
     ]
   },
   { path: '**', redirectTo: '/home' }

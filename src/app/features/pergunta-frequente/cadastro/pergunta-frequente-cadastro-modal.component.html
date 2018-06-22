@@ -8,40 +8,78 @@
 
     <div class="modal-conteudo">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <label class="form-control-label">Nome</label>
-          <input
-            type="text"
-            name="nome"
-            id="nome"
-            [(ngModel)]="perguntaFrequente.nome"
-            class="form-control input-sm"
-            />
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <mat-input-container class="tamanho-maximo">
+            <input
+              matInput
+              name="pergunta"
+              placeholder="Pergunta"
+              [(ngModel)]="perguntaFrequente.pergunta"
+              />
+
+          </mat-input-container>
         </div>
       </div>
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <label class="form-control-label">Descrição</label>
-          <textarea
-            name="especificacao"
-            id="especificacao"
-            [(ngModel)]="perguntaFrequente.especificacao"
-            class="form-control input-sm"
-            >
+          <mat-input-container class="tamanho-maximo">
+            <input
+              matInput
+              name="resposta"
+              placeholder="Resposta"
+              [ngModel]="tutorialQuery"
+              (ngModelChange)="changeTutorialQuery($event)"
+              [matAutocomplete]="tutorialAutocomplete"
+              />
+            <mat-autocomplete #tutorialAutocomplete="matAutocomplete" [displayWith]="displayTutorial">
+              <mat-option *ngFor="let tutorial of tutoriais | async" [value]="tutorial">
+                {{ tutorial.nome }}
+              </mat-option>
+            </mat-autocomplete>
 
-          </textarea>
+          </mat-input-container>
         </div>
       </div>
 
-      <mat-input-container>
-        <input matInput placeholder="State" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option value="teste">
-            <span>teste</span>
-          </mat-option>
-        </mat-autocomplete>
-      </mat-input-container>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <mat-input-container class="tamanho-maximo">
+            <input
+              matInput
+              name="keyword"
+              placeholder="Palavras-Chaves"
+              [(ngModel)]="keyword"
+              />
+              <button
+                mat-icon-button
+                matPrefix
+                (click)="addKeyword()"
+                >
+                <fa-icon
+                  [icon]="plus"
+                  matTooltip="Adicionar um palavra-chave"
+                  >
+                </fa-icon>
+              </button>
+
+          </mat-input-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <mat-chip-list>
+            <mat-chip *ngFor="let keyword of this.perguntaFrequente.keywords" class="palavra-chave">
+              <span>{{ keyword.descricao }}</span>
+              <fa-icon
+                [icon]="times"
+                >
+              </fa-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
     </div>
 
     <div class="modal-rodape">

@@ -1,5 +1,5 @@
-import { Tutorial } from "./tutorial.model";
-import { TutorialItemBreadcrumbCaminho } from "./tutorial-item-breadcrumb-caminho.model";
+import { Tutorial } from './tutorial.model';
+import { TutorialItemBreadcrumbCaminho } from './tutorial-item-breadcrumb-caminho.model';
 
 export class TutorialItemBreadcrumb {
   constructor(

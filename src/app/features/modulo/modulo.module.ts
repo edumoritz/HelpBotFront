@@ -12,7 +12,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ModuloCadastroModalComponent } from './cadastro/modulo-cadastro-modal.component';
 import { ModuloVisualizacaoComponent } from './visualizacao/modulo-visualizacao.component';
-import { ModuloCadastroComponent } from './cadastro/modulo-cadastro.component';
 import { PageModule } from '../../components/page/page.module';
 import { ModalModule } from '../../components/modal/modal.module';
 
@@ -31,7 +30,6 @@ import { ModalModule } from '../../components/modal/modal.module';
   ],
   declarations: [
     ModuloVisualizacaoComponent,
-    ModuloCadastroComponent,
     ModuloCadastroModalComponent
   ],
   entryComponents: [

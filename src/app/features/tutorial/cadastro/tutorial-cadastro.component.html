@@ -36,25 +36,9 @@
         <button
           mat-raised-button
           color="primary"
-          (click)="addTitulo()"
-          >
-          Adicionar Título
-        </button>
-
-        <button
-          mat-raised-button
-          color="primary"
           (click)="addDescricao()"
           >
           Adicionar Descrição
-        </button>
-
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="addCaminho()"
-          >
-          Adicionar Caminho
         </button>
 
         <button
@@ -73,64 +57,7 @@
 
           <div [ngSwitch]="item.formaExibicao">
 
-            <!-- TITULO -->
             <div *ngSwitchCase="0">
-              <div
-                class="titulo"
-                [class.titulo-grande]="item.objeto.tamanho === 'GRANDE'"
-                [class.titulo-medio]="item.objeto.tamanho === 'MEDIO'"
-                [class.titulo-pequeno]="item.objeto.tamanho === 'PEQUENO'"
-                >
-                <button
-                  mat-icon-button
-                  (click)="removerItem(item)"
-                  >
-                  <fa-icon
-                    [icon]="times"
-                    matTooltip="Excluir Título"
-                    >
-                  </fa-icon>
-                </button>
-                <mat-input-container class="nome-full">
-                  <input matInput [(ngModel)]="item.objeto.titulo" />
-                  <button
-                    mat-icon-button
-                    (click)="changeTamanhoTitulo(item.objeto)"
-                    matSuffix
-                    >
-                    <fa-icon
-                      *ngIf="item.objeto.tamanho === 'GRANDE'"
-                      [icon]="arrowUp"
-                      matTooltip="Título Grande"
-                      >
-                    </fa-icon>
-
-                    <fa-icon
-                      *ngIf="item.objeto.tamanho === 'MEDIO'"
-                      [icon]="minus"
-                      matTooltip="Título Médio"
-                      >
-                    </fa-icon>
-
-                    <fa-icon
-                      *ngIf="item.objeto.tamanho === 'PEQUENO'"
-                      [icon]="arrowDown"
-                      matTooltip="Título Pequeno"
-                      >
-                    </fa-icon>
-                    <span
-                      class="fas"
-                      [class.fa-arrow-up]="item.objeto.tamanho === 'GRANDE'"
-                      [class.fa-minus]="item.objeto.tamanho === 'MEDIO'"
-                      [class.fa-arrow-down]="item.objeto.tamanho === 'PEQUENO'"
-                      >
-                    </span>
-                  </button>
-                </mat-input-container>
-              </div>
-            </div>
-
-            <div *ngSwitchCase="1">
               <div class="titulo">
                 <button
                   mat-icon-button
@@ -151,14 +78,6 @@
                 </quill-editor>
               </div>
 
-            </div>
-
-            <div *ngSwitchCase="2">
-              <div class="caminho">
-                <div *ngFor="let caminho of item.objeto.tutorialItemBreadCrumbCaminho">
-                  {{ caminho.caminho }}
-                </div>
-              </div>
             </div>
 
           </div>

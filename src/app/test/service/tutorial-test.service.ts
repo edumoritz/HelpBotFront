@@ -94,4 +94,8 @@ export class TutorialTestService implements ATutorialService {
   public getItens(id: number): Observable<TutorialItens> {
     throw new Error('Not Implemented');
   }
+
+  public getBySearch(query: string): Observable<Pageable<Tutorial>> {
+    return null;
+  }
 }

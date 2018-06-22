@@ -5,14 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { PageModule } from '../../components/page/page.module';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatTableModule, MatInputModule } from '@angular/material';
+import { MatTableModule, MatInputModule, MatTooltipModule, MatChipsModule } from '@angular/material';
 import { MatButtonModule, MatAutocompleteModule } from '@angular/material';
 import { ModalModule } from '../../components/modal/modal.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PerguntaFrequenteVisualizacaoComponent } from './visualizacao/pergunta-frequente-visualizacao.component';
 import { PerguntaFrequenteCadastroModalComponent } from './cadastro/pergunta-frequente-cadastro-modal.component';
-import { PerguntaFrequenteCadastroComponent } from './cadastro/pergunta-frequente-cadastro.component';
 
 @NgModule({
   imports: [
@@ -26,16 +25,16 @@ import { PerguntaFrequenteCadastroComponent } from './cadastro/pergunta-frequent
     MatInputModule,
     MatButtonModule,
     PaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    MatChipsModule
   ],
   declarations: [
-    PerguntaFrequenteVisualizacaoComponent
-
+    PerguntaFrequenteVisualizacaoComponent,
+    PerguntaFrequenteCadastroModalComponent
   ],
   entryComponents: [
-    PerguntaFrequenteVisualizacaoComponent,
-    PerguntaFrequenteCadastroComponent,
     PerguntaFrequenteCadastroModalComponent
   ]
 })
-export class RegraCampoModule { }
+export class PerguntaFrequenteModule { }

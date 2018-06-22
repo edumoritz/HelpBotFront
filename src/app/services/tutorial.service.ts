@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Rx';
@@ -48,6 +48,13 @@ export class TutorialService extends ATutorialService {
 
   public getItens(id: number): Observable<TutorialItens> {
     return this.http.get<TutorialItens>(this.apiUrl + '/itens/' + id);
+  }
+
+  public getBySearch(query: string): Observable<Pageable<Tutorial>> {
+    let httpParams = new HttpParams();
+    httpParams = httpParams.append('query', query);
+
+    return this.http.get<Pageable<Tutorial>>(this.apiUrl + '/search', { params: httpParams });
   }
 
 }
