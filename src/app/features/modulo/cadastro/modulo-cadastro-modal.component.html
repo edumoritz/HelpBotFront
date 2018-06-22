@@ -7,30 +7,28 @@
     </div>
 
     <div class="modal-conteudo">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <label class="form-control-label">Nome</label>
-          <input
-            type="text"
-            name="nome"
-            id="nome"
-            [(ngModel)]="modulo.nome"
-            class="form-control input-sm"
-            />
-        </div>
+      <div>
+          <mat-input-container class="tamanho-maximo">
+              <input
+                matInput
+                name="nome"
+                placeholder="Nome"
+                [(ngModel)]="modulo.nome"
+                />
+  
+          </mat-input-container>        
       </div>
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <label class="form-control-label">Descrição</label>
-          <textarea
-            name="especificacao"
-            id="especificacao"
-            [(ngModel)]="modulo.especificacao"
-            class="form-control input-sm"
-            >
-
-          </textarea>
+          <label class="form-control-label">Descrição</label>          
+          <quill-editor
+              [(ngModel)]="modulo.especificacao"
+              [modules]="quillModules"
+              placeholder="Descrição"
+              [style.height]="'100%'"
+              >
+            </quill-editor>
         </div>
       </div>
     </div>
