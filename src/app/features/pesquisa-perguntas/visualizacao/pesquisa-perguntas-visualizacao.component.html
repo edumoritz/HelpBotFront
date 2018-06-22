@@ -1,0 +1,62 @@
+<help-bot-page titulo="PerguntaFrequente">
+
+    <div class="row my-fex-center">
+        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group">
+          <input class="form-control input-sm" placeholder="Digite para pesquisar" />          
+        </div>  
+        <div height="50%">          
+          <button
+          color="primary"
+          (click)="buscarTodos()"
+          class="btn btn-primary btn-sm"
+          >
+          Pesquisar
+        </button>
+        </div>      
+    </div>
+    
+    
+
+  <mat-table #table [dataSource]="dataSourceTable" class="separacao-itens">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="#">
+      <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+      <mat-cell *matCellDef="let perguntaFrequente">
+        <button mat-raised-button color="primary" class="mini-button" (click)="entityEvent(perguntaFrequente)">
+          <fa-icon
+            [icon]="fontAwesomePencil"
+            title="Editar esse Pergunta Frequente"
+            >
+          </fa-icon>
+        </button>
+        <button mat-raised-button color="warn" class="mini-button" (click)="remover(perguntaFrequente)">
+          <fa-icon
+            [icon]="fontAwesomeTimeCircle"
+            title="Remover esse Pergunta Frequente"
+            >
+          </fa-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let perguntaFrequente">{{ perguntaFrequente.nome }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="['#', 'nome']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['#', 'nome'];"></mat-row>
+  </mat-table>
+
+  <pagination
+    [totalItems]="paginacao.totalItens"
+    [ngModel]="paginacao.page + 1"
+    (ngModelChange)="onChangePage($event)"
+    [itemsPerPage]="paginacao.itensPerPage"
+    >
+  </pagination>
+
+</help-bot-page>
+

@@ -21,6 +21,8 @@ export class PesquisaPerguntaVisualizacaoComponent {
   public fontAwesomePencil = faPencilAlt;
   public fontAwesomePlusCircle = faPlusCircle;
   public fontAwesomeTimeCircle = faTimesCircle;
+  
+  public paginacao = new Paginacao();
 
   public pesquisaPerguntas = [] as PerguntaFrequente[];
 
@@ -29,6 +31,7 @@ export class PesquisaPerguntaVisualizacaoComponent {
     private router: Router,
     private modalService: ModalService,
   ) {
+    this.paginacao.itensPerPage = 2;
     this.buscarTodos();
    }
 
@@ -43,8 +46,9 @@ export class PesquisaPerguntaVisualizacaoComponent {
   }
 
   private buscarTodos(): void {
-    // this.pesquisaPerguntaService.getAll().subscribe((response) => {
-    //   this.perguntaFrequente = response.itens;
-    // });
+    this.pesquisaPerguntaService.getAll(this.paginacao).subscribe((response) => {
+      this.pesquisaPerguntas = response.itens;
+      this.paginacao.totalItens = response.qtdItens;
+    });
   }
 }

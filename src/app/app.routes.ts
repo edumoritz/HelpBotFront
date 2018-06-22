@@ -8,6 +8,7 @@ import { moduloRoute } from './features/modulo/modulo.routing';
 import { regraCampoRoute } from './features/regra-campo/regra-campo.routing';
 import { tutorialRoute } from './features/tutorial/tutorial.routing';
 import { HomeComponent } from './home/home.component';
+import { pesquisaPerguntasRoute } from './features/pesquisa-perguntas/pesquisa-perguntas.routing';
 
 export const APP_ROUTES: Routes = [
   {
@@ -23,7 +24,8 @@ export const APP_ROUTES: Routes = [
       ...funcionalidadesRoute,
       ...regraCampoRoute,
       ...demoRoute,
-      ...tutorialRoute
+      ...tutorialRoute,
+      ...pesquisaPerguntasRoute
     ]
   },
   { path: '**', redirectTo: '/home' }

@@ -32,4 +32,4 @@ import { PesquisaPerguntaVisualizacaoComponent } from './visualizacao/pesquisa-p
   entryComponents: [
   ]
 })
-export class RegraCampoModule { }
+export class PesquisaPerguntaModule { }
